@@ -1,0 +1,46 @@
+{
+  "name": "lib",
+  "version": "1.0.0",
+  "description": "package.json for Melissa Wheatley's PALS intake form project",
+  "main": "GruntFile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melissawheatley/capstone-PALS-intake.git"
+  },
+  "keywords": [
+    "PALS",
+    "nonprofit",
+    "501c3",
+    "NSS",
+    "capstone",
+    "midstone"
+  ],
+  "author": "Melissa Wheatley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melissawheatley/capstone-PALS-intake/issues"
+  },
+  "homepage": "https://github.com/melissawheatley/capstone-PALS-intake#readme",
+  "devDependencies": {
+    "browserify": "^13.1.1",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jquery": "^3.3.1",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "matchdep": "^1.0.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "firebase": "^3.6.9",
+    "jQuery": "^1.7.4"
+  }
+}
