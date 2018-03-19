@@ -1,18 +1,123 @@
 //Import
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Montserrat');
 
 //Variables
+$palsRed: #ba1f31;
+$darkBlue: #175676;
+$lightBlue: #a8d0db;
+$lightGrey: #dad6d6;
+$steel: #4c5b61;
 
 
 //Base Styles
+html {
+    /* $rembase = 10px */
+    font-size: 62.5%;
+}
+
 body{
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5rem; 
+    font-size: 1.6rem;
+    line-height: 2.5rem; 
     padding: 0;
+    color: $steel;
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    border-bottom: 2px solid $palsRed;
+}
+
+main{
+    margin-top: 20px;
 }
 
 h1{
-    font-family: Garamond, serif;
-    font-size: 3rem;
+    font-family: 'EB Garamond', Garamond, Georgia, 'Times New Roman', serif;
+    font-size: 3.5rem;
+    color: $steel;
+}
+
+h2{
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    font-size: 2.4rem;
+    color: $lightBlue;
+}
+
+h3{
+    font-family: 'EB Garamond', Garamond, Georgia, 'Times New Roman', serif;
+    font-size: 2.4rem;
+    color: black;
+    font-weight: bolder;
+}
+
+h4{
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: $darkBlue;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+blockquote{
+    font-family: 'EB Garamond', Garamond, Georgia, 'Times New Roman', serif;
+    font-size: 2.1rem;
+    padding: 0 5rem ;
+    color: $darkBlue;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+form{
+    padding: 1rem;
+}
+
+footer{
+    color: white;
+    margin-top: 2rem;
+}
+
+footer h4{
+    color: white;
+}
+
+footer a{
+    color: white;
+}
+
+//Classes//
+.greyBG{
+    background-color: $lightGrey;
+    padding: 1rem;
+}
+
+.redBG{
+    background-color: $palsRed;
+    padding: 1rem;
+}
+
+.steelBG{
+    background-color: $steel;
+    padding: 1rem;
+}
+
+.blueBG{
+    background-color: $lightBlue;
+    padding: 1rem;
+}
+
+//Bootstrap adjustments//
+.btn-outline-danger{
+    color: $palsRed;
+    border-color: $palsRed;
+}
+
+.btn-danger{
+    background-color: $palsRed;
+    padding: 1rem 2rem;
+    margin-top: .5rem;
 }
