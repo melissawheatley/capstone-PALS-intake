@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Intake Form | Post Adoption Learning Services</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="https://postadoptionlearning.org/favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    
 </head>
 <body>
     <nav class="navbar navbar-light bg-light">
@@ -22,9 +22,9 @@
         </form>
     </nav>
     <main>
-        <div class="container">
+        <div id="primaryContainer" class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div id="mainText" class="col-md-6">
                     <h1>Page Heading H1</h1>
                     <h2>Column Heading h2</h2>
                     <p>
@@ -34,9 +34,9 @@
                     <p>Lie in the sink all day give me some of your food give me some of your food give me some of your food meh, i don't want it, for howl uncontrollably for no reason. Nap all day who's the baby poop in litter box, scratch the walls for with tail in the air ears back wide eyed.
                     </p>
                 </div>
-                <div class="col-md-6 blueBG">
+                <div id="mainForm" class="col-md-6 blueBG">
                     <h3>H3 Form Heading</h3>
-                    <form>
+                    <form id="leadGen">
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Email address</label>
                             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -68,8 +68,16 @@
                         <button type="button" class="btn btn-danger btn-lg">Submit</button>
                     </form>
                 </div>
-        </div>          
+            </div>       
     </div>
+    <div id="legal" class="container">
+        <aside class="row">
+            <div class="col-md-12 greyBG disclaimer">
+                <h4>Legal Disclaimer:</h4>
+                <p><em>The Special Education Advocacy Center’s advocacy services are non-legal and do not in any way constitute legal advice or legal services. If a family being served by SEAC requires legal services or representation at any time, we will provide the family with a list of special education attorneys and/or organizations that provide legal representation.</em></p>
+            </div>
+    </div>
+    </aside>
     </main>
 
 <!--Footer-->
@@ -161,9 +169,9 @@
     </footer>
     <!--/.Footer-->
                           
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="dist/app.js"></script>
+<script src="dist/app.js"></script>
 </body>
 </html>
