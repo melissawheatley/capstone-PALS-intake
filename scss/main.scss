@@ -32,6 +32,7 @@ nav{
 
 main{
     margin: 2rem;
+    background-image: 'imgs/'
 }
 
 h1{
@@ -131,4 +132,12 @@ footer a{
     background-color: $palsRed;
     padding: 1rem 2rem;
     margin-top: .5rem;
+}
+
+.btn-lg{
+    font-size: inherit;
+}
+
+.form-control{
+    font-size: inherit;
 }
