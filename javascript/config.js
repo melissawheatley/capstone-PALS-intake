@@ -1,7 +1,7 @@
 "use strict";
 
 // REQUIRES
-var firebase = require("firebase/app");
+let firebase = require("firebase/app");
 require("firebase/auth");
 require("firebase/database");
 
