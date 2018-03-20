@@ -5,6 +5,9 @@ console.log('main.js is connected');
 // REQUIRES
 let googleUser = require('./user'),
     config = require("./config"),
+    objects = require('./objectBuilder'),
+    render = require('./DOMbuilder'),
+    addCase = require('./caseInfo'),
     $ = require('jquery');
     
 
@@ -16,7 +19,7 @@ $("#login").click(function(){
         console.log("UID result from login: ", result.user.uid);
         googleUser.setUser(result.user.uid);
         $("#login").addClass("d-none");
-        $("#userPic").removeClass("d-none").html(`<img src="${result.user.photoURL}" alt="${result.user.displayName} photo from Google" class="profPic rounded-circle">`);
+        $("#userPic").removeClass("d-none").html(`${result.user.displayName}  <img src="${result.user.photoURL}" alt="${result.user.displayName} photo from Google" class="profPic rounded-circle">`);
         sendToFirebase(buildUserObj(result.user.uid, result.user.email, result.user.displayName));
         console.log("login complete!");
     });
@@ -38,3 +41,11 @@ function buildUserObj(uid, email, name) {
 function sendToFirebase(userObj){
       googleUser.addUser(userObj);
 }
+
+// LEAD GEN FORM 
+// event listener to build user object
+$('#submitLeadGen').click(function(){
+    console.log('user clicked submit on lead gen form');
+    let caseObj = objects.buildInitialCase();
+    addCase.addCaseInfo(caseObj);
+});

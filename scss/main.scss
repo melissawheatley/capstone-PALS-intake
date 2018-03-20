@@ -95,7 +95,15 @@ footer a{
     color: white;
 }
 
-//Classes//
+// ID styling
+#userPic img{
+    height: 50px;
+    width: 50px;
+    align-self: center;
+}
+
+
+//Class styling//
 .greyBG{
     background-color: $lightGrey;
     padding: 1rem;
@@ -140,4 +148,8 @@ footer a{
 
 .form-control{
     font-size: inherit;
+}
+
+label{
+    margin-bottom: 0;
 }
