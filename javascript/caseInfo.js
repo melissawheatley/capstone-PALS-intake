@@ -4,6 +4,7 @@ console.log('caseInfo is compiling');
 // REQUIRES
 let $ = require('jquery'),
     config = require('./config'),
+    build = require('./DOMbuilder'),
     objects = require('./objectBuilder');
 
 
@@ -15,7 +16,8 @@ function addCaseInfo(caseObj) {
       data: JSON.stringify(caseObj),
       dataType: 'json'
    }).done((caseID) => {
-      return caseID;
+    build.displayLeadResults(caseID);
+    return caseID;
    });
 }
 
