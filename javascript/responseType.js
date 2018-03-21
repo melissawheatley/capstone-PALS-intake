@@ -2,7 +2,25 @@
 console.log("ready to get plan types and give info back");
 
 let $=require('jquery'),
-    config = require('./config');
+    config = require('./config'),
+    planOptions = `<option id ="default" value="choosePlan">Select a plan type</option>`;
+
+//FUNCTIONS
+function populatePlanTypes(){
+    getPlanTypes()
+.then(function(resolve){
+    var keys;
+    for(keys in resolve){
+        var type = resolve[keys].type;
+        planOptions += `<option id="${type}" value="${type}">${type}</option>`;
+    }
+    console.log("plan Options: ", planOptions);
+    $('#planType').html(planOptions);
+    console.log("populated select!");
+});
+    }
+    populatePlanTypes();
+    
 
 function getPlanTypes(){
     return new Promise((resolve,reject) => {
