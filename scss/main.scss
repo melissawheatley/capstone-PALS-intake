@@ -104,9 +104,19 @@ footer a{
 
 #nextSteps{
     color: white;
-    padding: 1rem 3rem;
 }
 
+#testimonial{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#testimonial p{
+    padding: 5rem;
+    color: $steel;
+    text-align: center;
+}
 
 //Class styling//
 .greyBG{
@@ -121,7 +131,6 @@ footer a{
 
 .steelBG{
     background-color: $steel;
-    padding: 1rem;
 }
 
 .blueBG{
