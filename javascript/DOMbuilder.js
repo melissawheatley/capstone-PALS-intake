@@ -17,10 +17,17 @@ function displayLeadResults(){
             <button type="button" id="bookDownload" class="btn btn-lg btn-danger mb-4">Download</button>
             <blockquote>Sniff all the things intently stare at the same spot, yet spend all night ensuring people don't sleep sleep all day for annoy owner until he gives you food say meow repeatedly until belly rubs, feels good under the bed.</blockquote>
             </div><!--/col-->
-        <div id="nextSteps" class="col-md-6 steelBG">
+        <div id="nextSteps" class="container col-md-6 steelBG">
+            <div class="row" style="padding: 1rem 3rem;">
             <h3 class="mt-4 pt-4;" style="color: #a8d0db;">Next Steps</h3>
             <p>Lie in the sink all day give me some of your food give me some of your food give me some of your food meh, i don't want it, for howl uncontrollably for no reason. Nap all day who's the baby poop in litter box, scratch the walls for with tail in the air ears back wide eyed.</p>
             <button type="button" id="loadLongForm" class="btn btn-lg btn-danger">Get Started</button>
+            </div>
+            <div class="row" id="testimonial">
+                <div class="col-12 blueBG">
+                <p>A testimonial quote will go here.</p>
+                </div><!--end nested col-12-->
+            </div><!--/nested row-->
         </div><!--/col-->
     </div><!--/row>`;
     $('#primaryContainer').html(leadResults);

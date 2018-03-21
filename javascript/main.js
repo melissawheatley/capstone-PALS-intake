@@ -8,6 +8,7 @@ let googleUser = require('./user'),
     objects = require('./objectBuilder'),
     render = require('./DOMbuilder'),
     addCase = require('./caseInfo'),
+    plans = require('./responseType'),
     $ = require('jquery');
     
 
