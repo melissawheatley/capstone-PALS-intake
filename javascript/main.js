@@ -50,3 +50,7 @@ $('#submitLeadGen').click(function(){
     let caseObj = objects.buildInitialCase();
     addCase.addCaseInfo(caseObj);
 });
+
+//RENDER LONG FORM
+//event listener to render long form
+$('#loadLongForm').on("click", render.loadLongForm());

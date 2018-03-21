@@ -32,6 +32,10 @@ function displayLeadResults(caseID){
     $('#primaryContainer').html(leadResults);  
 }
 
+function loadLongForm(){
+    console.log('get started button clicked to load long form');
+}
+
 // This buildLeadGen function rebuilds the original form for the edit functionality 
 function buildLeadGen(family, caseInfoID) {
   return new Promise((resolve, reject) => {
@@ -117,5 +121,6 @@ function buildLeadGen(family, caseInfoID) {
 
 module.exports = {
   buildLeadGen,
-  displayLeadResults
+  displayLeadResults,
+  loadLongForm
 };
