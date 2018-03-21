@@ -3,8 +3,8 @@
 let $ = require('jquery');
 
 function displayLeadResults(){
-    let leadResults = `<div id="primaryContainer" class="container">
-        <div id="responseText">
+    let leadResults = `<div class="row">
+        <div id="responseText" class="col-md-6">    
             <h1>Thank you for getting in touch with PALS!</h1>
             <h2>Your download is ready</h2>
             <p>Cat ipsum dolor sit amet, fight an alligator and win yet always ensure to lay down in such a manner that tail can lightly brush human's nose so shove bum in owner's face like camera lens, or purr when being pet. Leave dead animals as gifts. Meow loudly just to annoy owners jump off balcony, onto stranger's head but eat owner's food if it smells like fish eat as much as you wish missing until dinner time, and hide when guests come over. </p>
@@ -16,11 +16,13 @@ function displayLeadResults(){
             <p>Sit in window and stare oooh, a bird, yum destroy the blinds, and hit you unexpectedly for put toy mouse in food bowl run out of litter box at full speed , but chase ball of string yet destroy couch as revenge. </p>
             <button type="button" id="bookDownload" class="btn btn-lg btn-danger mb-4">Download</button>
             <blockquote>Sniff all the things intently stare at the same spot, yet spend all night ensuring people don't sleep sleep all day for annoy owner until he gives you food say meow repeatedly until belly rubs, feels good under the bed.</blockquote>
-            <h2 class="mt-4 pt-4">Next Steps</h2>
+            </div><!--/col-->
+        <div id="nextSteps" class="col-md-6 steelBG">
+            <h3 class="mt-4 pt-4;" style="color: #a8d0db;">Next Steps</h3>
             <p>Lie in the sink all day give me some of your food give me some of your food give me some of your food meh, i don't want it, for howl uncontrollably for no reason. Nap all day who's the baby poop in litter box, scratch the walls for with tail in the air ears back wide eyed.</p>
             <button type="button" id="loadLongForm" class="btn btn-lg btn-danger">Get Started</button>
-        </div>
-    </div>`;
+        </div><!--/col-->
+    </div><!--/row>`;
     $('#primaryContainer').html(leadResults);
 }
 
