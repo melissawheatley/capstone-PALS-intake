@@ -26,7 +26,12 @@ function populatePlanTypes(){
 //this function is for filling the dynamic portion of the leadGen response text.     
 function fillTypeSwitch(switchType){
     console.log("switchType: ", switchType);
+    getPlanTypes();
+    // indexon type equal to value return response
     switch (switchType) {
+            case 'IEP plan':
+                $('#dynamicResponse').html(``);
+                break;
         case 'IEP plan':
             $('#dynamicResponse').html(`<h2>Your IEP Plan Recommendations</h2>
             <p>This text is specifically for people who submitted the lead gen form with an IEP plan type selected.</p>
