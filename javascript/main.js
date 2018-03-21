@@ -14,15 +14,15 @@ let googleUser = require('./user'),
 
 //LOGIN
 $("#login").click(function(){
-    console.log("user clicked login");
+    // console.log("user clicked login");
     googleUser.googleLogIn()
     .then((result) => {
-        console.log("UID result from login: ", result.user.uid);
+        console.log("User result from login: ", result.user.uid);
         googleUser.setUser(result.user.uid);
         $("#login").addClass("d-none");
         $("#userPic").removeClass("d-none").html(`${result.user.displayName}  <img src="${result.user.photoURL}" alt="${result.user.displayName} photo from Google" class="profPic rounded-circle">`);
         sendToFirebase(buildUserObj(result.user.uid, result.user.email, result.user.displayName));
-        console.log("login complete!");
+        // console.log("login complete!");
     });
 });
 
@@ -46,7 +46,7 @@ function sendToFirebase(userObj){
 // LEAD GEN FORM 
 // event listener to build user object
 $('#submitLeadGen').click(function(){
-    console.log('user clicked submit on lead gen form');
+    // console.log('user clicked submit on lead gen form');
     let caseObj = objects.buildInitialCase();
     addCase.addCaseInfo(caseObj);
 });

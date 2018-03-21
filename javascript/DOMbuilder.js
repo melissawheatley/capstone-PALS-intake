@@ -1,21 +1,20 @@
 "use strict";
 
-let $ = require('jquery');
+// VARIABLES
+let $ = require('jquery'),
+    response = require('./responseType');
 
-function displayLeadResults(){
+// FUNCTIONS
+//this function re-renders the primary container upon submission
+function displayLeadResults(caseID){
     let leadResults = `<div class="row">
         <div id="responseText" class="col-md-6">    
             <h1>Thank you for getting in touch with PALS!</h1>
             <h2>Your download is ready</h2>
-            <p>Cat ipsum dolor sit amet, fight an alligator and win yet always ensure to lay down in such a manner that tail can lightly brush human's nose so shove bum in owner's face like camera lens, or purr when being pet. Leave dead animals as gifts. Meow loudly just to annoy owners jump off balcony, onto stranger's head but eat owner's food if it smells like fish eat as much as you wish missing until dinner time, and hide when guests come over. </p>
-            <ul>
-                <li>Item One</li>
-                <li>Item Two</li>
-                <li>Item Three</li>
-            </ul>
             <p>Sit in window and stare oooh, a bird, yum destroy the blinds, and hit you unexpectedly for put toy mouse in food bowl run out of litter box at full speed , but chase ball of string yet destroy couch as revenge. </p>
             <button type="button" id="bookDownload" class="btn btn-lg btn-danger mb-4">Download</button>
             <blockquote>Sniff all the things intently stare at the same spot, yet spend all night ensuring people don't sleep sleep all day for annoy owner until he gives you food say meow repeatedly until belly rubs, feels good under the bed.</blockquote>
+            <div id="dynamicResponse"></div>
             </div><!--/col-->
         <div id="nextSteps" class="container col-md-6 steelBG">
             <div class="row" style="padding: 1rem 3rem;">
@@ -30,9 +29,10 @@ function displayLeadResults(){
             </div><!--/nested row-->
         </div><!--/col-->
     </div><!--/row>`;
-    $('#primaryContainer').html(leadResults);
+    $('#primaryContainer').html(leadResults);  
 }
 
+// This buildLeadGen function rebuilds the original form for the edit functionality 
 function buildLeadGen(family, caseInfoID) {
   return new Promise((resolve, reject) => {
     // let caseItem = {

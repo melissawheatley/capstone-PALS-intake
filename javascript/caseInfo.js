@@ -5,7 +5,8 @@ console.log('caseInfo is compiling');
 let $ = require('jquery'),
     config = require('./config'),
     build = require('./DOMbuilder'),
-    objects = require('./objectBuilder');
+    objects = require('./objectBuilder'),
+    response = require('./responseType');
 
 
 function addCaseInfo(caseObj) {
@@ -16,8 +17,12 @@ function addCaseInfo(caseObj) {
       data: JSON.stringify(caseObj),
       dataType: 'json'
    }).done((caseID) => {
+    // need to call the switch here, then pass it in below
     build.displayLeadResults(caseID);
     return caseID;
+   }).then(()=>{
+       let switchType = caseObj.planType;
+    response.fillTypeSwitch(switchType);
    });
 }
 
