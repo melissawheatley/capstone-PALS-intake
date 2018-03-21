@@ -12,7 +12,7 @@ function displayLeadResults(caseID){
             <h1>Thank you for getting in touch with PALS!</h1>
             <h2>Your download is ready</h2>
             <p>Sit in window and stare oooh, a bird, yum destroy the blinds, and hit you unexpectedly for put toy mouse in food bowl run out of litter box at full speed , but chase ball of string yet destroy couch as revenge. </p>
-            <button type="button" id="bookDownload" class="btn btn-lg btn-danger mb-4">Download</button>
+            <a href="https://gbod-assets.s3.amazonaws.com/legacy/kintera-files/worship/Worship_2018-RevisedCommonLectionary-SundaysSpecial-YearB.pdf"><button type="button" id="bookDownload" class="btn btn-lg btn-danger mb-4">Download</button></a>
             <blockquote>Sniff all the things intently stare at the same spot, yet spend all night ensuring people don't sleep sleep all day for annoy owner until he gives you food say meow repeatedly until belly rubs, feels good under the bed.</blockquote>
             <div id="dynamicResponse"></div>
             </div><!--/col-->
