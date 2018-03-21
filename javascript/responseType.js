@@ -1,5 +1,4 @@
 "use strict";
-console.log("ready to get plan types and give info back");
 
 let $=require('jquery'),
     config = require('./config'),

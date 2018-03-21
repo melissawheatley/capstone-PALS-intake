@@ -1,7 +1,5 @@
 "use strict";
 
-console.log("ready to build objects");
-
 // REQUIRES
 let $ = require('jquery'),
     user = require('./user');

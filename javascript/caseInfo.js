@@ -1,5 +1,4 @@
 "use strict";
-console.log('caseInfo is compiling');
 
 // REQUIRES
 let $ = require('jquery'),
