@@ -33,7 +33,66 @@ function displayLeadResults(caseID){
 }
 
 function loadLongForm(){
-    console.log('get started button clicked to load long form');
+    // console.log('get started button clicked to load long form');
+    $('#primaryContainer').html(`<div id="secondaryForm" class="blueBG">
+    <h3>H3 Form Heading</h3>
+    <form id="leadGen">
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-sm-6 mb-4">
+                    <label for="firstName-parent1">First Name</label>
+                    <input type="text" id="firstName-parent1" class="form-control" placeholder="Parent/Guardian first name">
+                </div>
+                <div class="col-sm-6 mb-4">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Last name" id="lastName">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="childName">Child's Name</label>
+            <input type="text" class="form-control mb-4" id="childName" placeholder="Preferred name">
+        </div>
+
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-md-6">
+                    <label for="childName">Child's Date of Birth</label>
+                    <input type="date" class="form-control mb-2" id="childDOB">
+                </div>
+                <div class="col-md-6">
+                    <label for="birthCountry">Birth&nbsp;Country</label>
+                    <!-- <select class="gds-cr gds-countryflag" country-data-region-id="gds-cr-three" ></select> -->
+                    <input type="text" id="birthCountry" class="form-control mb-2" placeholder="Country">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="childDescription">Please share a few sentences about your child.</label>
+            <textarea class="form-control mb-4" id="childDescription" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="planType">Educational Plan Type</label>
+            <select class="form-control mb-4" id="planType">
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="eduInfo">Briefly describe your child's education services situation.</label>
+            <textarea class="form-control mb-4" id="eduInfo" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="referralSource">How did you hear about PALS?</label>
+            <input type="text" class="form-control mb-4" id="referralSource" placeholder="ex. Conference, Friend, etc.">
+        <div>
+    
+    <button type="button" id="submitLeadGen" class="btn btn-danger btn-lg">Submit</button>
+    </form>
+</div>`);
 }
 
 // This buildLeadGen function rebuilds the original form for the edit functionality 
