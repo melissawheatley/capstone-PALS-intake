@@ -16,14 +16,19 @@ function buildInitialCase() {
     eduInfo: $("#eduInfo").val(),
     referralSource: $("#referralSource").val(),
     uid: user.getUser(),
+  };
+  console.log("case object", caseObj);
+  return caseObj;
+}
+function buildSecondaryCase(){
+    let caseObj2 = {
     adoptionDate: $("#adoptionDate").val(),
     counseling: $("#counseling").val(),
     diagnoses: $("#diagnoses").val(),
     parentName2: $("#firstName-parent2").val(),
     parent2LastName: $("#lastName-parent2").val()
-  };
-  console.log("case object", caseObj);
-  return caseObj;
+    };
+    console.log("case object 2: ", caseObj2);
+    return caseObj2;
 }
-
 module.exports = {buildInitialCase};
