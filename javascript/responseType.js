@@ -1,5 +1,4 @@
 "use strict";
-console.log("ready to get plan types and give info back");
 
 let $=require('jquery'),
     config = require('./config'),
@@ -27,6 +26,8 @@ function populatePlanTypes(){
 //this function is for filling the dynamic portion of the leadGen response text.     
 function fillTypeSwitch(switchType){
     console.log("switchType: ", switchType);
+    getPlanTypes();
+    //you don't even need this switch!!! index on type equal to form value.
     switch (switchType) {
         case 'IEP plan':
             $('#dynamicResponse').html(`<h2>Your IEP Plan Recommendations</h2>
