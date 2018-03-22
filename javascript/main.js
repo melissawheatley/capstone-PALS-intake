@@ -79,10 +79,9 @@ $(document).on("click", "#submitLongForm", function(){
     caseFile.addCaseInfo(curUserCaseID, caseObj2)
     .then(()=>{
         console.log("case file" + curUserCaseID + "sucessfully updated");
-        loadProfile();
+        loadProfile(curUserCaseID);
     });
 });
-
 
 function loadProfile() {
     let currentUser = googleUser.getUser();
@@ -93,3 +92,12 @@ function loadProfile() {
         render.buildUserProfile(profileData);
     });
   }
+
+//Profile Page
+$(document).on("click", "#deleteProfile", function () {
+    console.log("delete button was clicked");
+    caseFile.deleteProfile(curUserCaseID)
+    .then(() =>{
+      window.alert("profile deleted");
+    });
+  });

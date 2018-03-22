@@ -39,4 +39,13 @@ function getProfile(currentUser){
     });
   }
 
-module.exports = {createCaseInfo, addCaseInfo, getProfile};
+function deleteProfile(caseID) {
+return $.ajax({
+    url: `${config.getFBsettings().databaseURL}/caseInfo/${caseID}.json`,
+    method: 'DELETE'
+}).done((data) =>{
+    return data;
+});
+}
+
+module.exports = {createCaseInfo, addCaseInfo, getProfile, deleteProfile};
