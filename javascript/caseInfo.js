@@ -27,7 +27,6 @@ function addCaseInfo(curUserCaseID, caseObj2) {
       data: JSON.stringify(caseObj2),
       dataType: 'json'
    }).done((caseID) => {
-       console.log("case file" + caseID + "sucessfully updated");
     return caseID;
    });
 }
