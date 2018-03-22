@@ -27,11 +27,8 @@ function populatePlanTypes(){
 function fillTypeSwitch(switchType){
     console.log("switchType: ", switchType);
     getPlanTypes();
-    // indexon type equal to value return response
+    //you don't even need this switch!!! index on type equal to form value.
     switch (switchType) {
-            case 'IEP plan':
-                $('#dynamicResponse').html(``);
-                break;
         case 'IEP plan':
             $('#dynamicResponse').html(`<h2>Your IEP Plan Recommendations</h2>
             <p>This text is specifically for people who submitted the lead gen form with an IEP plan type selected.</p>

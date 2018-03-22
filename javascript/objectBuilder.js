@@ -15,7 +15,12 @@ function buildInitialCase() {
     planType: $("#planType").val(),
     eduInfo: $("#eduInfo").val(),
     referralSource: $("#referralSource").val(),
-    uid: user.getUser()
+    uid: user.getUser(),
+    adoptionDate: $("#adoptionDate").val(),
+    counseling: $("#counseling").val(),
+    diagnoses: $("#diagnoses").val(),
+    parentName2: $("#firstName-parent2").val(),
+    parent2LastName: $("#lastName-parent2").val()
   };
   console.log("case object", caseObj);
   return caseObj;

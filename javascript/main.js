@@ -53,4 +53,4 @@ $('#submitLeadGen').click(function(){
 
 //RENDER LONG FORM
 //event listener to render long form
-$('#loadLongForm').on("click", render.loadLongForm());
+$(document).on("click", "#loadLongForm", render.loadLongForm);
