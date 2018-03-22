@@ -32,4 +32,12 @@ function addCaseInfo(curUserCaseID, caseObj2) {
    });
 }
 
-module.exports = {createCaseInfo, addCaseInfo};
+function getProfile(currentUser){
+    return $.ajax({
+      url: `${config.getFBsettings().databaseURL}/caseInfo.json?orderBy="uid"&equalTo="${currentUser}"`
+    }).done((profileData) => {
+      return profileData;
+    });
+  }
+
+module.exports = {createCaseInfo, addCaseInfo, getProfile};

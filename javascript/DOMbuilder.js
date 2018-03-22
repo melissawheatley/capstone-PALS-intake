@@ -6,7 +6,7 @@ let $ = require('jquery'),
 
 // FUNCTIONS
 //this function re-renders the primary container upon submission
-function displayLeadResults(caseID){
+function displayLeadResults(){
     let leadResults = `<div class="row">
         <div id="responseText" class="col-md-6">    
             <h1>Thank you for getting in touch with PALS!</h1>
@@ -80,8 +80,8 @@ function loadLongForm(){
 </div>`);
 }
 
-// This buildLeadGen function rebuilds the original form for the edit functionality 
-function buildLeadGen(family, caseInfoID) {
+// This function renders the entire node back to the DOM for read functionality and to prepare for update functionality.
+function buildUserProfile( ) {
   return new Promise((resolve, reject) => {
     // let caseItem = {
     //   title: song ? song.title : "",
@@ -164,7 +164,7 @@ function buildLeadGen(family, caseInfoID) {
 }
 
 module.exports = {
-  buildLeadGen,
+  buildUserProfile,
   displayLeadResults, 
   loadLongForm
 };
