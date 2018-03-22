@@ -27,9 +27,25 @@ function addCaseInfo(curUserCaseID, caseObj2) {
       data: JSON.stringify(caseObj2),
       dataType: 'json'
    }).done((caseID) => {
-       console.log("case file" + caseID + "sucessfully updated");
     return caseID;
    });
 }
 
-module.exports = {createCaseInfo, addCaseInfo};
+function getProfile(currentUser){
+    return $.ajax({
+      url: `${config.getFBsettings().databaseURL}/caseInfo.json?orderBy="uid"&equalTo="${currentUser}"`
+    }).done((profileData) => {
+      return profileData;
+    });
+  }
+
+function deleteProfile(caseID) {
+return $.ajax({
+    url: `${config.getFBsettings().databaseURL}/caseInfo/${caseID}.json`,
+    method: 'DELETE'
+}).done((data) =>{
+    return data;
+});
+}
+
+module.exports = {createCaseInfo, addCaseInfo, getProfile, deleteProfile};

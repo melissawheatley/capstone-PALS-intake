@@ -7,7 +7,7 @@ let googleUser = require('./user'),
     config = require("./config"),
     objects = require('./objectBuilder'),
     render = require('./DOMbuilder'),
-    addCase = require('./caseInfo'),
+    caseFile = require('./caseInfo'),
     plans = require('./responseType'),
     $ = require('jquery');
 
@@ -54,7 +54,7 @@ function sendToFirebase(userObj){
 $('#submitLeadGen').click(function(){
     // console.log('user clicked submit on lead gen form');
     let caseObj = objects.buildInitialCase();
-    addCase.createCaseInfo(caseObj)
+    caseFile.createCaseInfo(caseObj)
     .then((caseID)=>{
         console.log("caseID: ", caseID);
         // this is funky. how could i access caseID outside of this function without creating the other global variable? 
@@ -74,7 +74,30 @@ $(document).on("click", "#loadLongForm", render.loadLongForm);
 //event listener to build userObj2
 $(document).on("click", "#submitLongForm", function(){
     // console.log('user clicked submit on secondary long form');
-    // console.log("current case after second submit clicked is", curUserCaseID);
+    console.log("current case after second submit clicked is", curUserCaseID);
     let caseObj2 = objects.buildSecondaryCase();
-    addCase.addCaseInfo(curUserCaseID, caseObj2);
+    caseFile.addCaseInfo(curUserCaseID, caseObj2)
+    .then(()=>{
+        console.log("case file" + curUserCaseID + "sucessfully updated");
+        loadProfile(curUserCaseID);
+    });
 });
+
+function loadProfile() {
+    let currentUser = googleUser.getUser();
+    console.log("current user at beginning of loadProfile", currentUser);
+    caseFile.getProfile(currentUser)
+    .then((profileData) =>{
+      console.log("Here's the profile data ", profileData);
+        render.buildUserProfile(profileData);
+    });
+  }
+
+//Profile Page
+$(document).on("click", "#deleteProfile", function () {
+    console.log("delete button was clicked");
+    caseFile.deleteProfile(curUserCaseID)
+    .then(() =>{
+      window.alert("profile deleted");
+    });
+  });
