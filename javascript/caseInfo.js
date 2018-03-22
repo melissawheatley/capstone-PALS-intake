@@ -8,7 +8,7 @@ let $ = require('jquery'),
     response = require('./responseType');
 
 
-function addCaseInfo(caseObj) {
+function createCaseInfo(caseObj) {
 	// console.log("add case to firebase", caseInfo);
 	return $.ajax({
       url: `${config.getFBsettings().databaseURL}/caseInfo.json`,
@@ -16,13 +16,20 @@ function addCaseInfo(caseObj) {
       data: JSON.stringify(caseObj),
       dataType: 'json'
    }).done((caseID) => {
-    // need to call the switch here, then pass it in below
-    build.displayLeadResults(caseID);
     return caseID;
-   }).then(()=>{
-       let switchType = caseObj.planType;
-    response.fillTypeSwitch(switchType);
    });
 }
 
-module.exports = {addCaseInfo};
+function addCaseInfo(curUserCaseID, caseObj2) {
+	return $.ajax({
+      url: `${config.getFBsettings().databaseURL}/caseInfo/${curUserCaseID}.json`,
+      type: 'PATCH',
+      data: JSON.stringify(caseObj2),
+      dataType: 'json'
+   }).done((caseID) => {
+       console.log("case file" + caseID + "sucessfully updated");
+    return caseID;
+   });
+}
+
+module.exports = {createCaseInfo, addCaseInfo};

@@ -31,4 +31,4 @@ function buildSecondaryCase(){
     console.log("case object 2: ", caseObj2);
     return caseObj2;
 }
-module.exports = {buildInitialCase};
+module.exports = {buildInitialCase, buildSecondaryCase};
