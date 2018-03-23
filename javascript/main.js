@@ -9,6 +9,7 @@ let googleUser = require('./user'),
     render = require('./DOMbuilder'),
     caseFile = require('./caseInfo'),
     plans = require('./responseType'),
+    profile = require('./profile'),
     $ = require('jquery');
 
 var currentUser;
@@ -59,6 +60,8 @@ $('#submitLeadGen').click(function(){
         console.log("caseID: ", caseID);
         // this is funky. how could i access caseID outside of this function without creating the other global variable? 
         curUserCaseID = caseID.name;
+        // take this out of main and do a getter/setter 
+        //or get by UID and add this to the set user
         // console.log("current case after sending first object to firebase is", curUserCaseID);
     }).then(()=>{
         render.displayLeadResults();
@@ -79,7 +82,7 @@ $(document).on("click", "#submitLongForm", function(){
     caseFile.addCaseInfo(curUserCaseID, caseObj2)
     .then(()=>{
         console.log("case file" + curUserCaseID + "sucessfully updated");
-        loadProfile(curUserCaseID);
+        profile.loadProfile(curUserCaseID);
     });
 });
 
@@ -98,6 +101,7 @@ $(document).on("click", "#deleteProfile", function () {
     console.log("delete button was clicked");
     caseFile.deleteProfile(curUserCaseID)
     .then(() =>{
-      window.alert("profile deleted");
+      render.renderHomeMain();
+      $('#primaryContainer').prepend(`<div class="redBG"><h4 class="text-center" style="color: white;">Your profile has been deleted.</h4></div>`);
     });
   });
