@@ -10,24 +10,15 @@ let googleUser = require('./user'),
     profile = require('./profile'),
     $ = require('jquery');
 
-var currentUser;
-var caseID;
-var curUserCaseID;   
-
 // LEAD GEN FORM 
 // event listener to build user object
-$('#submitLeadGen').click(function(){
-    // console.log('user clicked submit on lead gen form');
+$('#submitLeadGen').on("click", function(){
+    console.log('user clicked submit on lead gen form');
     let caseObj = objects.buildInitialCase();
     caseFile.createCaseInfo(caseObj)
     .then((caseID)=>{
-        console.log("caseID: ", caseID);
-        // this is funky. how could i access caseID outside of this function without creating the other global variable? 
-        curUserCaseID = caseID.name;
-        // take this out of main and do a getter/setter 
-        //or get by UID and add this to the set user
-        // console.log("current case after sending first object to firebase is", curUserCaseID);
-    }).then(()=>{
+        console.log("caseID after sending leadgen to firebase: ", caseID.name); 
+        caseFile.setCase(caseID);
         render.displayLeadResults();
         let switchType = caseObj.planType;
         plans.fillTypeSwitch(switchType);
@@ -41,7 +32,7 @@ $(document).on("click", "#loadLongForm", render.loadLongForm);
 //event listener to build userObj2
 $(document).on("click", "#submitLongForm", function(){
     // console.log('user clicked submit on secondary long form');
-    console.log("current case after second submit clicked is", curUserCaseID);
+    let curUserCaseID = caseFile.getCase();
     let caseObj2 = objects.buildSecondaryCase();
     caseFile.addCaseInfo(curUserCaseID, caseObj2)
     .then(()=>{

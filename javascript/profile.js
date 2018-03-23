@@ -16,9 +16,10 @@ function loadProfile() {
     });
   }
 
-//Profile Page
+// Profile Page Interactions //
 $(document).on("click", "#deleteProfile", function () {
     console.log("delete button was clicked");
+    var curUserCaseID = caseFile.getCase();
     caseFile.deleteProfile(curUserCaseID)
     .then(() =>{
       render.renderHomeMain();
