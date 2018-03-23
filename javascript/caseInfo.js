@@ -7,6 +7,8 @@ let $ = require('jquery'),
     objects = require('./objectBuilder'),
     response = require('./responseType');
 
+let curUserCaseID;
+
 
 function createCaseInfo(caseObj) {
 	// console.log("add case to firebase", caseInfo);
@@ -18,6 +20,14 @@ function createCaseInfo(caseObj) {
    }).done((caseID) => {
     return caseID;
    });
+}
+
+function setCase(caseID){
+	curUserCaseID = caseID.name;
+}
+
+function getCase(){
+    return curUserCaseID;
 }
 
 function addCaseInfo(curUserCaseID, caseObj2) {
@@ -48,4 +58,4 @@ return $.ajax({
 });
 }
 
-module.exports = {createCaseInfo, addCaseInfo, getProfile, deleteProfile};
+module.exports = {createCaseInfo, addCaseInfo, getProfile, deleteProfile, setCase, getCase};

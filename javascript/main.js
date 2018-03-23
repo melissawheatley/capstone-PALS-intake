@@ -9,6 +9,8 @@ let googleUser = require('./user'),
     render = require('./DOMbuilder'),
     caseFile = require('./caseInfo'),
     plans = require('./responseType'),
+    profile = require('./profile'),
+    form = require('./formInteractions'),
     $ = require('jquery');
 
 var currentUser;
@@ -49,55 +51,3 @@ function sendToFirebase(userObj){
       googleUser.addUser(userObj);
 }
 
-// LEAD GEN FORM 
-// event listener to build user object
-$('#submitLeadGen').click(function(){
-    // console.log('user clicked submit on lead gen form');
-    let caseObj = objects.buildInitialCase();
-    caseFile.createCaseInfo(caseObj)
-    .then((caseID)=>{
-        console.log("caseID: ", caseID);
-        // this is funky. how could i access caseID outside of this function without creating the other global variable? 
-        curUserCaseID = caseID.name;
-        // console.log("current case after sending first object to firebase is", curUserCaseID);
-    }).then(()=>{
-        render.displayLeadResults();
-        let switchType = caseObj.planType;
-        plans.fillTypeSwitch(switchType);
-    });
-});
-
-//SECONDARY - LONG FORM
-//event listener to render long form
-$(document).on("click", "#loadLongForm", render.loadLongForm);
-
-//event listener to build userObj2
-$(document).on("click", "#submitLongForm", function(){
-    // console.log('user clicked submit on secondary long form');
-    console.log("current case after second submit clicked is", curUserCaseID);
-    let caseObj2 = objects.buildSecondaryCase();
-    caseFile.addCaseInfo(curUserCaseID, caseObj2)
-    .then(()=>{
-        console.log("case file" + curUserCaseID + "sucessfully updated");
-        loadProfile(curUserCaseID);
-    });
-});
-
-function loadProfile() {
-    let currentUser = googleUser.getUser();
-    console.log("current user at beginning of loadProfile", currentUser);
-    caseFile.getProfile(currentUser)
-    .then((profileData) =>{
-      console.log("Here's the profile data ", profileData);
-        render.buildUserProfile(profileData);
-    });
-  }
-
-//Profile Page
-$(document).on("click", "#deleteProfile", function () {
-    console.log("delete button was clicked");
-    caseFile.deleteProfile(curUserCaseID)
-    .then(() =>{
-      window.alert("profile deleted");
-    });
-  });
