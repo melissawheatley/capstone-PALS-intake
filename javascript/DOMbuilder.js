@@ -106,8 +106,84 @@ function buildUserProfile(profileData) {
         }
       }
 
+function renderHomeMain(){
+    $('main').html(`<div id="primaryContainer" class="container">
+        <div class="row">
+            <div id="mainText" class="col-md-6">
+                <h1>Page Heading H1</h1>
+                <h2>Column Heading h2</h2>
+                <p>Cat ipsum dolor sit amet, fight an alligator and win yet always ensure to lay down in such a manner that tail can lightly brush human's nose so shove bum in owner's face like camera lens, or purr when being pet. Leave dead animals as gifts. Meow loudly just to annoy owners jump off balcony, onto stranger's head but eat owner's food if it smells like fish eat as much as you wish missing until dinner time, and hide when guests come over. </p>
+                <p>Sit in window and stare oooh, a bird, yum destroy the blinds, and hit you unexpectedly for put toy mouse in food bowl run out of litter box at full speed , but chase ball of string yet destroy couch as revenge. </p>
+                <blockquote>Sniff all the things intently stare at the same spot, yet spend all night ensuring people don't sleep sleep all day for annoy owner until he gives you food say meow repeatedly until belly rubs, feels good under the bed.</blockquote>
+                <p>Lie in the sink all day give me some of your food give me some of your food give me some of your food meh, i don't want it, for howl uncontrollably for no reason. Nap all day who's the baby poop in litter box, scratch the walls for with tail in the air ears back wide eyed.</p>
+            </div>
+            <div id="mainForm" class="col-md-6 blueBG">
+                <h3>H3 Form Heading</h3>
+                <form id="leadGen">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-sm-6 mb-4">
+                                <label for="firstName-parent1">First Name</label>
+                                <input type="text" id="firstName-parent1" class="form-control" placeholder="Parent/Guardian first name">
+                            </div>
+                            <div class="col-sm-6 mb-4">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" placeholder="Last name" id="lastName">
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="childName">Child's Name</label>
+                        <input type="text" class="form-control mb-4" id="childName" placeholder="Preferred name">
+                    </div>
+            
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label for="childName">Child's Date of Birth</label>
+                                <input type="date" class="form-control mb-2" id="childDOB">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="birthCountry">Birth&nbsp;Country</label>
+                                <!-- <select class="gds-cr gds-countryflag" country-data-region-id="gds-cr-three" ></select> -->
+                                <input type="text" id="birthCountry" class="form-control mb-2" placeholder="Country">
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="childDescription">Please share a few sentences about your child.</label>
+                        <textarea class="form-control mb-4" id="childDescription" rows="3"></textarea>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="planType">Educational Plan Type</label>
+                        <select class="form-control form-control-lg mb-4" id="planType">
+                        </select>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="eduInfo">Briefly describe your child's education services situation.</label>
+                        <textarea class="form-control mb-4" id="eduInfo" rows="3"></textarea>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="referralSource">How did you hear about PALS?</label>
+                        <input type="text" class="form-control mb-4" id="referralSource" placeholder="ex. Conference, Friend, etc.">
+                    <div>
+                
+                <button type="button" id="submitLeadGen" class="btn btn-danger btn-lg">Submit</button>
+                </form>
+            </div>
+        </div> 
+    </div>`);
+}
+renderHomeMain();
+
 module.exports = {
   buildUserProfile,
   displayLeadResults, 
-  loadLongForm
+  loadLongForm,
+  renderHomeMain
 };
