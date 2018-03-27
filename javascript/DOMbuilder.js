@@ -173,7 +173,7 @@ function renderHomeMain(){
                         <input type="text" class="form-control mb-4" id="referralSource" placeholder="ex. Conference, Friend, etc.">
                     <div>
                 
-                <button type="button" id="submitLeadGen" class="btn btn-danger btn-lg">Submit</button>
+                <button type="button" id="submitLeadGen" class="btn btn-danger btn-lg"><a href="#">Submit</a></button>
                 </form>
             </div>
         </div> 

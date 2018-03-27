@@ -24,6 +24,7 @@ body{
     color: $steel;
     padding: 0;
     margin: 0;
+    position: relative;
 }
 
 nav{
@@ -31,7 +32,6 @@ nav{
 }
 
 main{
-    margin: 2rem;
     position: relative;
 }
 
@@ -96,6 +96,10 @@ footer a{
 }
 
 // ID styling
+#primaryContainer{
+    margin: 2rem;
+}
+
 #userPic img{
     height: 50px;
     width: 50px;
@@ -119,9 +123,10 @@ footer a{
 }
 
 #deleteSuccess{
-    position: sticky;
-    top: 0;
+    position: absolute;
+    margin-top: -20px;
     z-index: 1000;
+    width: 100%;
 }
 
 //Class styling//
@@ -164,6 +169,11 @@ footer a{
 
 .btn-lg{
     font-size: inherit;
+}
+
+.btn a{
+    text-decoration: none;
+    color: inherit;
 }
 
 .form-control{

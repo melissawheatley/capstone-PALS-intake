@@ -13,7 +13,7 @@ let googleUser = require('./user'),
 // LEAD GEN FORM 
 // event listener to build user object
 $('#submitLeadGen').on("click", function(){
-    console.log('user clicked submit on lead gen form');
+    console.log('user clicked submit on lead gen form...');
     let caseObj = objects.buildInitialCase();
     caseFile.createCaseInfo(caseObj)
     .then((caseID)=>{
@@ -30,7 +30,8 @@ $('#submitLeadGen').on("click", function(){
 $(document).on("click", "#loadLongForm", render.loadLongForm);
 
 //event listener to build userObj2
-$(document).on("click", "#submitLongForm", function(){
+$(document).on("click", "#submitLongForm", function(event){
+    event.preventDefault();
     // console.log('user clicked submit on secondary long form');
     let curUserCaseID = caseFile.getCase();
     let caseObj2 = objects.buildSecondaryCase();

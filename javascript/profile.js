@@ -24,7 +24,7 @@ $(document).on("click", "#deleteProfile", function () {
     .then(() =>{
       render.renderHomeMain();
       let deleteMessage = `<div id="deleteSuccess" class="redBG"><h4 class="text-center" style="color: white;">Your profile has been deleted.</h4></div>`;
-      $(deleteMessage).insertBefore($('main'));
+      $(deleteMessage).insertBefore($('#primaryContainer'));
     }).then(()=>{
       $('#deleteSuccess').delay( 2100 ).fadeOut( 400 );
     });
