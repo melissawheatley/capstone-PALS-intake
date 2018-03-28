@@ -20,7 +20,7 @@ function displayLeadResults(){
             <div class="row" style="padding: 1rem 3rem;">
             <h3 class="mt-4 pt-4;" style="color: #a8d0db;">Next Steps</h3>
             <p>Lie in the sink all day give me some of your food give me some of your food give me some of your food meh, i don't want it, for howl uncontrollably for no reason. Nap all day who's the baby poop in litter box, scratch the walls for with tail in the air ears back wide eyed.</p>
-            <button type="button" id="loadLongForm" class="btn btn-lg btn-danger">Get Started</button>
+            <button type="button" id="loadLongForm" class="btn btn-lg btn-danger"><a href="#">Get Started</a></button>
             </div>
             <div class="row" id="testimonial">
                 <div class="col-12 blueBG">
@@ -75,7 +75,7 @@ function loadLongForm(){
             </div>
         </div>
     
-    <button type="button" id="submitLongForm" class="btn btn-danger btn-lg">Submit</button>
+    <button type="button" id="submitLongForm" class="btn btn-danger btn-lg"><a href="#">Submit</a></button>
     </form>
 </div>`);
 }
@@ -93,8 +93,8 @@ function buildUserProfile(profileData) {
                     <p><strong>DOB:</strong> ${currentProfile.childDOB}</p>
                     <p><strong>Description:</strong> ${currentProfile.childDescription}</p>
                     <p><strong>Parent Name(s)</strong> ${currentProfile.parentName1}, ${currentProfile.parentName2}</p>
-                    <button type="button" id="editProfile" class="btn btn-danger btn-lg">Edit</button>
-                    <button type="button" id="deleteProfile" class="btn btn-dark btn-lg">Delete</button>
+                    <button type="button" id="editProfile" class="btn btn-danger btn-lg"><a href="#">Edit</a></button>
+                    <button type="button" id="deleteProfile" class="btn btn-dark btn-lg"><a href="#">Delete</a></button>
                     </div>
                 <div id="profileDeep" class="col col-md-8">
                     <p><strong>School Situation:</strong>&nbsp;${currentProfile.eduInfo}</p>
