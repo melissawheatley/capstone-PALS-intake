@@ -11,8 +11,9 @@ function loadProfile() {
     console.log("current user at beginning of loadProfile", currentUser);
     caseFile.getProfile(currentUser)
     .then((profileData) =>{
+      var curUserCaseID = caseFile.getCase();
       console.log("Here's the profile data ", profileData);
-        render.buildUserProfile(profileData);
+        render.buildUserProfile(profileData, curUserCaseID);
     });
   }
 
@@ -33,14 +34,17 @@ $(document).on("click", "#deleteProfile", function () {
 
 // go get the song from database and then populate the form for editing.
 $(document).on("click", "#editProfile", function () {
-  var currentProfile = $(this).data("editProfile");
-  var curUserCaseID = caseFile.getCase();
-  caseFile.getProfile(curUserCaseID)
+  console.log("clicked edit profile");
+  var curCaseID = $(this).data("edit-case"); 
+  console.log("curCaseID from editbtn click: ", curCaseID);
+  caseFile.getCaseByID(curCaseID)
   .then((profileData) =>{
-    return render.buildEditForm(currentProfile, curUserCaseID);
-  })
-  .then((finishedForm) =>{
+    console.log("profileData after editbtn click: ", profileData);
+    return render.buildEditForm(profileData, curCaseID);
+  }).then((finishedForm) =>{
+    console.log('edit form coming...');
     $("#primaryContainer").html(finishedForm);
+    // $('#primaryContainer').html(`<p>Edit button clicked. form should work</p>`);
   });
 });
 
