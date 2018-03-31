@@ -181,9 +181,36 @@ function renderHomeMain(){
 }
 renderHomeMain();
 
+function buildEditForm(currentProfile, curUserCaseID){
+    //pass in currentProfile and caseID
+      return new Promise(function (resolve, reject) {
+        let caseEditObj = {
+          childName: currentProfile ? currentProfile.childName : "",
+          lastName: currentProfile ? currentProfile.lastName : "",
+          DOB: currentProfile ? currentProfile.childDOB : "",
+          Description: currentProfile ? currentProfile.childDescription : "",
+          formTitle: currentProfile ? `Edit ${currentProfile.childName}'s Profile` : "Add Child Profile",
+          btnText: currentProfile ? "save changes" : "save",
+          btnId: currentProfile ? "save_edit_btn" : "save_new_btn"
+        },
+        form =
+          `<h3>${caseEditObj.formTitle}</h3>
+            <div class="row">
+                <div id="profileGlance" class="col col-md-4 blueBG">
+                    <p><strong>Child's Name: </strong><input type="text" id="childName" placeholder="Child's First Name" value="${caseEditObj.childName}"></input> <input type="text" id="lastName" placeholder="Last Name" value="${caseEditObj.lastName}"></input></p>
+                    <p><strong>DOB:</strong> <input type="text" id="childDOB" placeholder="Child's birth date" value="${caseEditObj.childDOB}"></input></p>
+                    <p><strong>Description:</strong> <input type="text" id="childDescription" placeholder="Please add a few sentences describing your child." value="${caseEditObj.childDescription}"></input></p>
+                    <button id="${curUserCaseID}" class=${caseEditObj.btnId}>${caseEditObj.btnText}</button>
+                </div><!--end profileGlance col-->
+            </div><!--end row-->`;
+        resolve(form);
+      });
+  }
+
 module.exports = {
   buildUserProfile,
   displayLeadResults, 
   loadLongForm,
-  renderHomeMain
+  renderHomeMain,
+  buildEditForm
 };

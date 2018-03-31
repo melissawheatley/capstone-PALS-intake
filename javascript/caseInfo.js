@@ -58,4 +58,15 @@ return $.ajax({
 });
 }
 
+function editProfile(caseEditObj, curUserCaseID) {
+    return $.ajax({
+      url: `${config.getFBsettings().databaseURL}/caseInfo/${curUserCaseID}.json`,
+      type: 'PUT',
+      data: JSON.stringify(caseEditObj),
+      dataType: "json"
+  }).done((caseID) =>{
+    return caseID;
+  });
+  }
+
 module.exports = {createCaseInfo, addCaseInfo, getProfile, deleteProfile, setCase, getCase};

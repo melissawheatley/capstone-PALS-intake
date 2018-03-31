@@ -16,7 +16,8 @@ function loadProfile() {
     });
   }
 
-// Profile Page Interactions //
+
+// Profile Page Interactions listeners//
 $(document).on("click", "#deleteProfile", function () {
     console.log("delete button was clicked");
     var curUserCaseID = caseFile.getCase();
@@ -29,5 +30,18 @@ $(document).on("click", "#deleteProfile", function () {
       $('#deleteSuccess').delay( 2100 ).fadeOut( 400 );
     });
   });
+
+// go get the song from database and then populate the form for editing.
+$(document).on("click", "#editProfile", function () {
+  var currentProfile = $(this).data("editProfile");
+  var curUserCaseID = caseFile.getCase();
+  caseFile.getProfile(curUserCaseID)
+  .then((profileData) =>{
+    return render.buildEditForm(currentProfile, curUserCaseID);
+  })
+  .then((finishedForm) =>{
+    $("#primaryContainer").html(finishedForm);
+  });
+});
 
 module.exports = {loadProfile};
