@@ -48,9 +48,9 @@ $(document).on('click', '.save_edit_btn', function(event){
   console.log('clicked to update profile');
   let curUserCaseID = caseFile.getCase();
     let caseEditObj = objects.buildFullCase();
-    let finishedCaseID = caseFile.editProfile(caseEditObj, curUserCaseID)
+    caseFile.editProfile(caseEditObj, curUserCaseID)
     .then(()=>{
-        console.log("case" + finishedCaseID + " sucessfully updated via edit form");
-        profile.loadProfile(finishedCaseID);
+        console.log("sucessfully updated case via edit form");
+        profile.loadProfile();
     });
 });
