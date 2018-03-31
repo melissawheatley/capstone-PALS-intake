@@ -13,11 +13,11 @@ let googleUser = require('./user'),
 // LEAD GEN FORM 
 // event listener to build user object
 $('#submitLeadGen').on("click", function(){
-    console.log('user clicked submit on lead gen form...');
+    // console.log('user clicked submit on lead gen form...');
     let caseObj = objects.buildInitialCase();
     caseFile.createCaseInfo(caseObj)
     .then((caseID)=>{
-        console.log("caseID after sending leadgen to firebase: ", caseID.name); 
+        // console.log("caseID after sending leadgen to firebase: ", caseID.name); 
         caseFile.setCase(caseID);
         render.displayLeadResults();
         let switchType = caseObj.planType;
@@ -37,7 +37,20 @@ $(document).on("click", "#submitLongForm", function(event){
     let caseObj2 = objects.buildSecondaryCase();
     caseFile.addCaseInfo(curUserCaseID, caseObj2)
     .then(()=>{
-        console.log("case file" + curUserCaseID + "sucessfully updated");
+        console.log("case file " + curUserCaseID + " sucessfully updated");
         profile.loadProfile(curUserCaseID);
+    });
+});
+
+// listens for a click on the update profile button and puts info in firebase
+$(document).on('click', '.save_edit_btn', function(event){
+  event.preventDefault();
+  console.log('clicked to update profile');
+  let curUserCaseID = caseFile.getCase();
+    let caseEditObj = objects.buildFullCase();
+    caseFile.editProfile(caseEditObj, curUserCaseID)
+    .then(()=>{
+        console.log("sucessfully updated case via edit form");
+        profile.loadProfile();
     });
 });

@@ -11,12 +11,14 @@ function loadProfile() {
     console.log("current user at beginning of loadProfile", currentUser);
     caseFile.getProfile(currentUser)
     .then((profileData) =>{
+      var curUserCaseID = caseFile.getCase();
       console.log("Here's the profile data ", profileData);
-        render.buildUserProfile(profileData);
+        render.buildUserProfile(profileData, curUserCaseID);
     });
   }
 
-// Profile Page Interactions //
+
+// Profile Page Interactions listeners//
 $(document).on("click", "#deleteProfile", function () {
     console.log("delete button was clicked");
     var curUserCaseID = caseFile.getCase();
@@ -29,5 +31,22 @@ $(document).on("click", "#deleteProfile", function () {
       $('#deleteSuccess').delay( 2100 ).fadeOut( 400 );
     });
   });
+
+// get the profiledata, then populate the form for editing.
+$(document).on("click", "#editProfile", function () {
+  // console.log("clicked edit profile");
+  var curCaseID = $(this).data("edit-case"); 
+  // console.log("curCaseID from editbtn click: ", curCaseID);
+  caseFile.getCaseByID(curCaseID)
+  .then((profileData) =>{
+    // console.log("profileData after editbtn click: ", profileData);
+    return render.buildEditForm(profileData, curCaseID);
+  }).then((finishedForm) =>{
+    console.log('edit form coming...');
+    $("#primaryContainer").html(finishedForm);
+  });
+});
+
+
 
 module.exports = {loadProfile};

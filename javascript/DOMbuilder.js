@@ -81,8 +81,7 @@ function loadLongForm(){
 }
 
 // This function renders the entire node back to the DOM for read functionality and to prepare for update functionality.
-function buildUserProfile(profileData) {
-        console.log("getting ready to get ready to render");
+function buildUserProfile(profileData, curEditProfile) {
         for(var item in profileData){
         let currentProfile = profileData[item];
         let profileDisplay =
@@ -93,7 +92,7 @@ function buildUserProfile(profileData) {
                     <p><strong>DOB:</strong> ${currentProfile.childDOB}</p>
                     <p><strong>Description:</strong> ${currentProfile.childDescription}</p>
                     <p><strong>Parent Name(s)</strong> ${currentProfile.parentName1}, ${currentProfile.parentName2}</p>
-                    <button type="button" id="editProfile" class="btn btn-danger btn-lg"><a href="#">Edit</a></button>
+                    <button type="button" id="editProfile" data-edit-case="${curEditProfile}" class="btn btn-danger btn-lg"><a href="#">Edit</a></button>
                     <button type="button" id="deleteProfile" class="btn btn-dark btn-lg"><a href="#">Delete</a></button>
                     </div>
                 <div id="profileDeep" class="col col-md-8">
@@ -181,9 +180,35 @@ function renderHomeMain(){
 }
 renderHomeMain();
 
+function buildEditForm(profileData, curCaseID){
+    return new Promise(function (resolve, reject) {
+    let caseEditObj = {
+        childName: profileData ? profileData.childName : "",
+        lastName: profileData ? profileData.lastName : "",
+        childDOB: profileData ? profileData.childDOB : "",
+        childDescription: profileData ? profileData.childDescription : "",
+        formTitle: profileData ? `Edit ${profileData.childName}'s Profile` : "Add Child Profile",
+        btnText: profileData ? "Update Profile" : "save",
+        btnType: profileData ? "save_edit_btn" : "save_new_btn"
+    },
+    form =
+        `<h3>${caseEditObj.formTitle}</h3>
+        <div class="row">
+            <div id="profileEditBasic" class="col col-md-4 blueBG">
+                <p><strong>Child's Name: </strong><input type="text" id="childName" placeholder="Child's First Name" value="${caseEditObj.childName}"></input> <input type="text" id="lastName" placeholder="Last Name" value="${caseEditObj.lastName}"></input></p>
+                <p><strong>DOB:</strong> <input type="text" id="childDOB" placeholder="Child's birth date" value="${caseEditObj.childDOB}"></input></p>
+                <p><strong>Description:</strong> <input type="text" id="childDescription" placeholder="Please add a few sentences describing your child." value="${caseEditObj.childDescription}"></input></p>
+                <button id="${curCaseID}" class="${caseEditObj.btnType} btn btn-danger btn-lg"">${caseEditObj.btnText}</button>
+            </div><!--end profileEditBasic col-->
+        </div><!--end row-->`;
+    resolve(form);
+    });
+  }
+
 module.exports = {
   buildUserProfile,
   displayLeadResults, 
   loadLongForm,
-  renderHomeMain
+  renderHomeMain,
+  buildEditForm
 };

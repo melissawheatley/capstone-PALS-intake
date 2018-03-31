@@ -49,6 +49,16 @@ function getProfile(currentUser){
     });
   }
 
+function getCaseByID(caseID) {
+return $.ajax({
+    url: `${config.getFBsettings().databaseURL}/caseInfo/${caseID}.json`
+}).done((profileData) =>{
+    return profileData;
+}).fail((error) =>{
+    return error;
+});
+}
+
 function deleteProfile(caseID) {
 return $.ajax({
     url: `${config.getFBsettings().databaseURL}/caseInfo/${caseID}.json`,
@@ -58,4 +68,15 @@ return $.ajax({
 });
 }
 
-module.exports = {createCaseInfo, addCaseInfo, getProfile, deleteProfile, setCase, getCase};
+function editProfile(caseEditObj, curUserCaseID) {
+    return $.ajax({
+      url: `${config.getFBsettings().databaseURL}/caseInfo/${curUserCaseID}.json`,
+      type: 'PATCH',
+      data: JSON.stringify(caseEditObj),
+      dataType: "json"
+  }).done((caseID) =>{
+    return caseID;
+  });
+  }
+
+module.exports = {createCaseInfo, addCaseInfo, getProfile, getCaseByID, deleteProfile, setCase, getCase, editProfile};
