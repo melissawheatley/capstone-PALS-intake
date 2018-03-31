@@ -45,6 +45,7 @@ $(document).on("click", "#submitLongForm", function(event){
 // listens for a click on the update profile button and puts info in firebase
 $(document).on('click', '.save_edit_btn', function(event){
   event.preventDefault();
+  console.log('clicked to update profile');
   let curUserCaseID = caseFile.getCase();
     let caseEditObj = objects.buildFullCase();
     let finishedCaseID = caseFile.editProfile(caseEditObj, curUserCaseID)
