@@ -47,9 +47,9 @@ $(document).on('click', '.save_edit_btn', function(event){
   event.preventDefault();
   let curUserCaseID = caseFile.getCase();
     let caseEditObj = objects.buildFullCase();
-    caseFile.editProfile(curUserCaseID, caseEditObj)
+    let finishedCaseID = caseFile.editProfile(caseEditObj, curUserCaseID)
     .then(()=>{
-        console.log("case file " + curUserCaseID + " sucessfully updated");
-        profile.loadProfile(curUserCaseID);
+        console.log("case" + finishedCaseID + " sucessfully updated via edit form");
+        profile.loadProfile(finishedCaseID);
     });
 });

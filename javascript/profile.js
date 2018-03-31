@@ -32,20 +32,21 @@ $(document).on("click", "#deleteProfile", function () {
     });
   });
 
-// go get the song from database and then populate the form for editing.
+// get the profiledata, then populate the form for editing.
 $(document).on("click", "#editProfile", function () {
-  console.log("clicked edit profile");
+  // console.log("clicked edit profile");
   var curCaseID = $(this).data("edit-case"); 
-  console.log("curCaseID from editbtn click: ", curCaseID);
+  // console.log("curCaseID from editbtn click: ", curCaseID);
   caseFile.getCaseByID(curCaseID)
   .then((profileData) =>{
-    console.log("profileData after editbtn click: ", profileData);
+    // console.log("profileData after editbtn click: ", profileData);
     return render.buildEditForm(profileData, curCaseID);
   }).then((finishedForm) =>{
     console.log('edit form coming...');
     $("#primaryContainer").html(finishedForm);
-    // $('#primaryContainer').html(`<p>Edit button clicked. form should work</p>`);
   });
 });
+
+
 
 module.exports = {loadProfile};
