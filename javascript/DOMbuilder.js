@@ -42,38 +42,93 @@ function loadLongForm(){
         <h4>More About Your Child</h4>
         <div class="form-group">
             <div class="form-row">
-                <div class="col-sm-6 mb-4">
+                <div class="col-sm-6 mb-2">
+                    <label for="childName">Child's Date of Birth</label>
+                    <input type="date" class="form-control mb-2" id="childDOB">
+                </div>
+                <div class="col-sm-6 mb-2">
                     <label for="adoptionDate">Date of Adoption</label>
                     <input type="date" class="form-control mb-2" id="adoptionDate">
-                </div>
-                <div class="col-sm-6 mb-4">
-                    <label for="counseling">Is your child currently receiving trauma counseling?</label>
-                    <select class="form-control form-control-lg mb-4" id="counseling">
-                    <option>Yes</option>
-                    <option>No</option>
-                    </select>
                 </div>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="diagnoses">Please list your child's diagnoses.</label>
-            <textarea class="form-control mb-4" id="diagnoses" rows="2"></textarea>
+            <label for="childDescription">Help us get to know your child! Please share a few sentences about her/him.</label>
+            <textarea class="form-control mb-4" id="childDescription" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-md-3 mb-4">
+                    <label for="currentGrade">What grade is your child in?</label>
+                    <input type="text" class="form-control" id="currentGrade" placeholder="Current Grade">
+                </div>
+                <div class="col-md-6 mb-4">
+                    <label for="schoolName">What school are they attending?</label>
+                    <input type="text" id="schoolName" class="form-control" placeholder="School Name">
+                </div>
+                <div class="col-md-3 mb-4">
+                    <label for="currentState">What state is the school in?</label>
+                    <input type="text" class="form-control" id="currentState" placeholder="ex. TN">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="diagnoses">Please list your child's formal diagnoses.</label>
+            <textarea class="form-control mb-5" id="diagnoses" rows="2"></textarea>
+        </div>
+
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-sm-6 mb-4">
+                    <label for="counseling">Is your child currently receiving trauma counseling?</label>
+                    <select class="form-control form-control-lg" id="counseling">
+                        <option id="default" value="no-answer">Please select an answer</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="col-sm-6 mb-4">
+                    <label for="needsKnown">Were you aware of your child's special needs at placement?</label>
+                    <select class="form-control form-control-lg" id="needsKnown">
+                        <option id="default" value="no-answer">Please select an answer</option>
+                        <option>Yes</option>
+                        <option>Yes, but not fully</option>
+                        <option>No</option>
+                    </select>
+                </div>
+            </div>
         </div>
 
     <div class="form-group">
         <h4>Second Parent/Guardian (if applicable)</h4>
-            <div class="form-row">
-                <div class="col-sm-6 mb-4">
-                    <label for="firstName-parent2">First Name</label>
-                    <input type="text" id="firstName-parent2" class="form-control" placeholder="First name">
-                </div>
-                <div class="col-sm-6 mb-4">
-                    <label for="lastName-parent2">Last Name</label>
-                    <input type="text" class="form-control" placeholder="(only if different)" id="lastName-parent2">
-                </div>
+        <div class="form-row">
+            <div class="col-sm-6 mb-4">
+                <label for="firstName-parent2">First Name</label>
+                <input type="text" id="firstName-parent2" class="form-control" placeholder="First name">
+            </div>
+            <div class="col-sm-6 mb-4">
+                <label for="lastName-parent2">Last Name</label>
+                <input type="text" class="form-control" placeholder="(only if different)" id="lastName-parent2">
             </div>
         </div>
+    </div>
+
+    <div class="form-group">
+        <h4>Additional Contact Information</h4>
+        <div class="form-row">
+            <div class="col-sm-6 mb-4">
+                <label for="phoneNumber">Primary Phone Number:</label>
+                <input type="tel" id="phoneNumber" class="form-control" placeholder="999-999-9999">
+            </div>
+            <div class="col-sm-6 mb-4">
+                <label for="callPreference">Best Time to Call:</label>
+                <input type="text" class="form-control" placeholder="Let us know of any preferences" id="callPreference">
+            </div>
+        </div>
+    </div>
     
     <button type="button" id="submitLongForm" class="btn btn-danger btn-lg"><a href="#">Submit</a></button>
     </form>
@@ -121,7 +176,7 @@ function renderHomeMain(){
                 <p>Lie in the sink all day give me some of your food give me some of your food give me some of your food meh, i don't want it, for howl uncontrollably for no reason. Nap all day who's the baby poop in litter box, scratch the walls for with tail in the air ears back wide eyed.</p>
             </div>
             <div id="mainForm" class="col-md-6 blueBG">
-                <h3>H3 Form Heading</h3>
+                <h3>Get Your free copy of <em>A Field Guide to Learning</em></h3>
                 <form id="leadGen">
                     <div class="form-group">
                         <div class="form-row">
@@ -135,29 +190,24 @@ function renderHomeMain(){
                             </div>
                         </div>
                     </div>
-            
+
                     <div class="form-group">
-                        <label for="childName">Child's Name</label>
-                        <input type="text" class="form-control mb-4" id="childName" placeholder="Preferred name">
+                        <label for="parentEmail">Where do you want us to send your <em>Field Guide</em>?</label>
+                        <input type="email" class="form-control mb-4" id="parentEmail" placeholder="name@domain.com">
                     </div>
             
                     <div class="form-group">
                         <div class="form-row">
-                            <div class="col-md-6">
-                                <label for="childName">Child's Date of Birth</label>
-                                <input type="date" class="form-control mb-2" id="childDOB">
+                            <div class="col-sm-6 mb-4">
+                                <label for="childName">Child's Name</label>
+                                <input type="text" class="form-control" id="childName" placeholder="Preferred name">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-sm-6 mb-4">
                                 <label for="birthCountry">Birth&nbsp;Country</label>
                                 <!-- <select class="gds-cr gds-countryflag" country-data-region-id="gds-cr-three" ></select> -->
-                                <input type="text" id="birthCountry" class="form-control mb-2" placeholder="Country">
+                                <input type="text" id="birthCountry" class="form-control" placeholder="Country">
                             </div>
                         </div>
-                    </div>
-            
-                    <div class="form-group">
-                        <label for="childDescription">Please share a few sentences about your child.</label>
-                        <textarea class="form-control mb-4" id="childDescription" rows="3"></textarea>
                     </div>
             
                     <div class="form-group">
