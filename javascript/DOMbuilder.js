@@ -35,9 +35,9 @@ function displayLeadResults(){
 function loadLongForm(){
     // console.log('get started button clicked to load long form');
     $('#primaryContainer').html(`<h1>Complete Your Profile</h1>
-    <p>Please tell us more about your child's situation. We'll review the information you've shared and schedule a phone call to follow up within 72 hours.</p>
+    <p>Please tell us more about your child's situation. We'll review the information you've shared and follow up with you within 72 hours.</p>
     <div id="longFormContainer" class="blueBG">
-    <h3>Second Form Heading H3</h3>
+    <h3>Let's Build Your Case File</h3>
     <form id="secondaryForm">
         <h4>More About Your Child</h4>
         <div class="form-group">
