@@ -42,9 +42,14 @@ $(document).on("click", "#editProfile", function () {
     // console.log("profileData after editbtn click: ", profileData);
     return render.buildEditForm(profileData, curCaseID);
   }).then((finishedForm) =>{
-    console.log('edit form coming...');
+    // console.log('edit form coming...');
     $("#primaryContainer").html(finishedForm);
   });
+});
+
+// loads profile when clicking on profilepic dropdown
+$(document).on('click', '#viewProfdropdown', function () {
+loadProfile();
 });
 
 
