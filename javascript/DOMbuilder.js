@@ -98,7 +98,7 @@ function buildUserProfile(profileData, curEditProfile) {
                     <button type="button" id="deleteProfile" class="btn btn-dark btn-lg"><a href="#">Delete</a></button>
                     </div>
                 <div id="profileDeep" class="col col-md-8">
-                    <h3>More About ${currentProfile.childName}</h3>
+                    <h2>More About ${currentProfile.childName}</h2>
                     <p><strong>DOB:</strong> ${currentProfile.childDOB}</p>
                     <p><strong>Description:</strong>&nbsp;${currentProfile.childDescription}</p>
                     <p><strong>Diagnosed Special Needs:</strong>&nbsp;${currentProfile.diagnoses}</p>
