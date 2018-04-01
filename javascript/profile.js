@@ -34,9 +34,9 @@ $(document).on("click", "#deleteProfile", function () {
 
 // get the profiledata, then populate the form for editing.
 $(document).on("click", "#editProfile", function () {
-  // console.log("clicked edit profile");
+  console.log("clicked edit profile");
   var curCaseID = $(this).data("edit-case"); 
-  // console.log("curCaseID from editbtn click: ", curCaseID);
+  console.log("curCaseID from editbtn click: ", curCaseID);
   caseFile.getCaseByID(curCaseID)
   .then((profileData) =>{
     // console.log("profileData after editbtn click: ", profileData);
@@ -49,7 +49,9 @@ $(document).on("click", "#editProfile", function () {
 
 // loads profile when clicking on profilepic dropdown
 $(document).on('click', '#viewProfdropdown', function () {
-loadProfile();
+  console.log('view profile clicked from dropdown');
+  var user = googleUser.getUser();
+  loadProfile(user);
 });
 
 

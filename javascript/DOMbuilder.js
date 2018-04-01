@@ -88,17 +88,21 @@ function buildUserProfile(profileData, curEditProfile) {
         `<h1>${currentProfile.childName}'s Profile</h1>
         <div class="row">
                 <div id="profileGlance" class="col col-md-4 blueBG">
+                    <h3>At a Glance</h3>
                     <p><strong>Child's Name:</strong> ${currentProfile.childName} ${currentProfile.lastName}</p>
-                    <p><strong>DOB:</strong> ${currentProfile.childDOB}</p>
-                    <p><strong>Description:</strong> ${currentProfile.childDescription}</p>
-                    <p><strong>Parent Name(s)</strong> ${currentProfile.parentName1}, ${currentProfile.parentName2}</p>
+                    <p><strong>Parent Name(s)</strong> ${currentProfile.parentName1} ${currentProfile.lastName}<br />
+                    ${currentProfile.parentName2}</p>
+                    <p><strong>Birth Country:</strong> ${currentProfile.birthCountry}</p>
+                    <p><strong>Overview:</strong> ${currentProfile.eduInfo}</p>
                     <button type="button" id="editProfile" data-edit-case="${curEditProfile}" class="btn btn-danger btn-lg"><a href="#">Edit</a></button>
                     <button type="button" id="deleteProfile" class="btn btn-dark btn-lg"><a href="#">Delete</a></button>
                     </div>
                 <div id="profileDeep" class="col col-md-8">
-                    <p><strong>School Situation:</strong>&nbsp;${currentProfile.eduInfo}</p>
+                    <h2>More About ${currentProfile.childName}</h2>
+                    <p><strong>DOB:</strong> ${currentProfile.childDOB}</p>
+                    <p><strong>Description:</strong>&nbsp;${currentProfile.childDescription}</p>
                     <p><strong>Diagnosed Special Needs:</strong>&nbsp;${currentProfile.diagnoses}</p>
-                    <p><strong>Currently in Counseling:</strong>&nbsp;${currentProfile.counseling}</p>
+                    <p><strong>Current Trauma Counseling:</strong>&nbsp;${currentProfile.counseling}</p>
                 </div>
         </div>`;
         $("#primaryContainer").html(profileDisplay);
@@ -109,11 +113,11 @@ function renderHomeMain(){
     $('main').html(`<div id="primaryContainer" class="container">
         <div class="row">
             <div id="mainText" class="col-md-6">
-                <h1>Page Heading H1</h1>
-                <h2>Column Heading h2</h2>
-                <p>Cat ipsum dolor sit amet, fight an alligator and win yet always ensure to lay down in such a manner that tail can lightly brush human's nose so shove bum in owner's face like camera lens, or purr when being pet. Leave dead animals as gifts. Meow loudly just to annoy owners jump off balcony, onto stranger's head but eat owner's food if it smells like fish eat as much as you wish missing until dinner time, and hide when guests come over. </p>
-                <p>Sit in window and stare oooh, a bird, yum destroy the blinds, and hit you unexpectedly for put toy mouse in food bowl run out of litter box at full speed , but chase ball of string yet destroy couch as revenge. </p>
-                <blockquote>Sniff all the things intently stare at the same spot, yet spend all night ensuring people don't sleep sleep all day for annoy owner until he gives you food say meow repeatedly until belly rubs, feels good under the bed.</blockquote>
+                <h1>Educate. Advocate. Empower.</h1>
+                <h2>Get Free Resources and Recommendations</h2>
+                <p>The Post Adoption Learning Services (PALS) team understands each child's situation is colored by his/her individual stories of both trauma and triumph. As PALS works on behalf of both children adopted internationally as a group and works to come alongside individuals to provide direct advocacy services, our research has shown that XYZ. In our FREE eBook download, you can begin learning about the patterns and systems that affect your child's future.</p>
+                <p>This book explores many topics, including writing text about topic one, writing more text and more information about topic two, and adding something splashy and fun with topic 3 or later </p>
+                <blockquote>It shouldn't be hard to come up with a quote with just a prolific and gifted writer steering the ship. </blockquote>
                 <p>Lie in the sink all day give me some of your food give me some of your food give me some of your food meh, i don't want it, for howl uncontrollably for no reason. Nap all day who's the baby poop in litter box, scratch the walls for with tail in the air ears back wide eyed.</p>
             </div>
             <div id="mainForm" class="col-md-6 blueBG">
