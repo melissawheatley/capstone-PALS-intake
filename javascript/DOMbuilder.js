@@ -171,7 +171,7 @@ function buildUserProfile(profileData, curEditProfile) {
         <div class="row justify-content-start">
             <div class="col-md-4">
                 <button type="button" id="editProfile" data-edit-case="${curEditProfile}" class="btn btn-danger btn-lg btn-profile"><a href="#">Edit</a></button>
-                <button type="button" id="deleteProfile" class="btn btn-dark btn-lg btn-profile"><a href="#">Delete</a></button>
+                <button type="button" id="deleteProfile" data-edit-case="${curEditProfile}" class="btn btn-dark btn-lg btn-profile"><a href="#">Delete</a></button>
             </div>
         </div>
     </div>`;

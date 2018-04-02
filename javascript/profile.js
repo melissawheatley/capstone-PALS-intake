@@ -5,8 +5,8 @@ let $ = require('jquery'),
     caseFile = require('./caseInfo'),
     googleUser = require('./user');
 
-
 function loadProfile(curUserCaseID) {
+    $('#legal').addClass("d-none");
     let currentUser = googleUser.getUser();
     console.log("current user at beginning of loadProfile", currentUser);
     caseFile.getProfile(currentUser)
@@ -18,6 +18,7 @@ function loadProfile(curUserCaseID) {
   }
 
   function loadDropProfile() {
+    $('#legal').addClass("d-none");
     let currentUser = googleUser.getUser();
     console.log("current user at beginning of loadProfile", currentUser);
     caseFile.getProfile(currentUser)
@@ -33,9 +34,10 @@ function loadProfile(curUserCaseID) {
 
 // Profile Page Interactions listeners//
 $(document).on("click", "#deleteProfile", function () {
-    console.log("delete button was clicked");
-    var curUserCaseID = caseFile.getCase();
-    caseFile.deleteProfile(curUserCaseID)
+    // console.log("delete button was clicked");
+    let curEditProfile = $(this).data("edit-case");
+    console.log("delete button was clicked with profile", curEditProfile);
+    caseFile.deleteProfile(curEditProfile)
     .then(() =>{
       render.renderHomeMain();
       let deleteMessage = `<div id="deleteSuccess" class="redBG"><h4 class="text-center" style="color: white;">Your profile has been deleted.</h4></div>`;
