@@ -294,19 +294,21 @@ function buildEditForm(profileData, curCaseID){
                 <p><strong>Description:</strong> <input type="text" id="childDescription" placeholder="Please add a few sentences describing your child." value="${caseEditObj.childDescription}"></input></p>
                 <p><strong>Plan Type:</strong> <input type="text" id="planType" placeholder="IEP/504/other" value="${caseEditObj.planType}"></input></p>
                 <p><strong>Diagnosed Special Needs:</strong>&nbsp;<input type="text" id="diagnoses" placeholder="Formal Diagnoses" value="${caseEditObj.diagnoses}"></input></p>
+                <p><strong>Special Needs Known at Time of Adoption/Placement:</strong>&nbsp;<input type="text" id="needsKnown" placeholder="" value="${caseEditObj.needsKnown}"></input></p>
                 <p><strong>Current Trauma Counseling:</strong>&nbsp;<input type="text" id="counseling" placeholder="" value="${caseEditObj.counseling}"></input></p>
                 <hr />
-                <h2>${currentProfile.lastName} Family Information</h2>
-                <p><strong>Email:</strong> ${currentProfile.parentEmail}</p>
-                <p><strong>Primary Phone:</strong> ${currentProfile.phoneNumber}</p>
-                <p><strong>Call Preferences:</strong>&nbsp;${currentProfile.callPreference}</p>
-                <p><strong>Special Needs Known at Time of Adoption/Placement:</strong>&nbsp;${currentProfile.needsKnown}</p>
-            </div>
+                <h2>${caseEditObj.lastName} Family Information</h2>
+                <p><strong>Email:</strong>&nbsp;<input type="email" id="parentEmail" placeholder="email@domain.com" value="${caseEditObj.parentEmail}"></input></p>
+                <p><strong>Current Trauma Counseling:</strong>&nbsp;<input type="text" id="counseling" placeholder="" value="${caseEditObj.counseling}"></input></p>
+                <p><strong>Primary Phone:</strong>&nbsp;<input type="tel" id="phoneNumber" placeholder="999-999-9999" value="${caseEditObj.phoneNumber}"></input></p>
+                <p><strong>Call Preferences:</strong>&nbsp;<input type="text" id="callPreference" placeholder"please share time of day preferences" value ="${caseEditObj.callPreference}"></input></p>            </div>
                 <button id="${curCaseID}" class="${caseEditObj.btnType} btn btn-danger btn-lg"">${caseEditObj.btnText}</button>
+            </div><!--col-->
         </div><!--end row-->`;
     resolve(form);
     });
   }
+
 
 module.exports = {
   buildUserProfile,
