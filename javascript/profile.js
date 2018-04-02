@@ -16,7 +16,12 @@ function loadProfile() {
         render.buildUserProfile(profileData, curUserCaseID);
     });
   }
-
+  
+function calculateAge(childDOB) { 
+  var ageDifMs = Date.now() - childDOB.getTime();
+  var ageDate = new Date(ageDifMs); // miliseconds from epoch
+  return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
 
 // Profile Page Interactions listeners//
 $(document).on("click", "#deleteProfile", function () {
@@ -56,4 +61,4 @@ $(document).on('click', '#viewProfdropdown', function () {
 
 
 
-module.exports = {loadProfile};
+module.exports = {loadProfile, calculateAge};
