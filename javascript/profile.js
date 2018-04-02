@@ -69,6 +69,10 @@ $(document).on('click', '#viewProfdropdown', function () {
   loadDropProfile(user);
 });
 
+$(document).on('click', '#editCancel', function () {
+  var user = googleUser.getUser();
+  loadDropProfile(user);
+});
 
 
 module.exports = {loadProfile};

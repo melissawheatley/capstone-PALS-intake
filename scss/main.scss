@@ -94,11 +94,16 @@ footer h4{
 footer a{
     color: white;
 }
+footer a:hover{
+    color: white;
+}
 
 label{
     margin-bottom: 0;
     color: $darkBlue;
 }
+
+
 
 // ID styling
 #primaryContainer{
@@ -133,6 +138,16 @@ label{
     z-index: 1000;
     width: 100%;
 }
+
+#profileEditBasic input{
+    width: 100%;
+}
+
+#profileEditDeep input{
+    width: 100%;
+}
+
+
 
 //Class styling//
 .greyBG{
@@ -179,6 +194,10 @@ label{
 
 .btn-lg{
     font-size: inherit;
+}
+
+.btn-primary{
+    background-color: $darkBlue;
 }
 
 .btn a{
