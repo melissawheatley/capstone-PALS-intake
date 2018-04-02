@@ -50,7 +50,3 @@ function buildUserObj(uid, email, name) {
 function sendToFirebase(userObj){
       googleUser.addUser(userObj);
 }
-
-$(function() {
-    $("#leadGen").validate();
- });
