@@ -302,7 +302,7 @@ function buildEditForm(profileData, curCaseID){
                 <p><strong>Current Trauma Counseling:</strong>&nbsp;<input type="text" id="counseling" placeholder="" value="${caseEditObj.counseling}"></input></p>
                 <p><strong>Primary Phone:</strong>&nbsp;<input type="tel" id="phoneNumber" placeholder="999-999-9999" value="${caseEditObj.phoneNumber}"></input></p>
                 <p><strong>Call Preferences:</strong>&nbsp;<input type="text" id="callPreference" placeholder"please share time of day preferences" value ="${caseEditObj.callPreference}"></input></p>            </div>
-                <button id="${curCaseID}" class="${caseEditObj.btnType} btn btn-danger btn-lg"">${caseEditObj.btnText}</button>
+                <button data-case-info="${curCaseID}" class="${caseEditObj.btnType} btn btn-danger btn-lg"">${caseEditObj.btnText}</button>
             </div><!--col-->
         </div><!--end row-->`;
     resolve(form);

@@ -46,7 +46,9 @@ $(document).on("click", "#submitLongForm", function(event){
 $(document).on('click', '.save_edit_btn', function(event){
   event.preventDefault();
   console.log('clicked to update profile');
-  let curUserCaseID = caseFile.getCase();
+  var curUserCaseID = $(this).data("case-info");
+  console.log("curCaseID from button click at 10:05: ", curUserCaseID);
+//   let curUserCaseID = caseFile.getCase();
     let caseEditObj = objects.buildFullCase();
     caseFile.editProfile(caseEditObj, curUserCaseID)
     .then(()=>{
