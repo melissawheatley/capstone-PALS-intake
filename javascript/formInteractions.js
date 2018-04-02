@@ -12,8 +12,8 @@ let googleUser = require('./user'),
 
 // LEAD GEN FORM 
 // event listener to build user object
-$(document).on("click", "submitLeadGen", function(){
-    // console.log('user clicked submit on lead gen form...');
+$(document).on("click", "#submitLeadGen", function(){
+    console.log('user clicked submit on lead gen form...');
     let caseObj = objects.buildInitialCase();
     caseFile.createCaseInfo(caseObj)
     .then((caseID)=>{

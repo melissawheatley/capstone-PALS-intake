@@ -51,3 +51,6 @@ function sendToFirebase(userObj){
       googleUser.addUser(userObj);
 }
 
+$(function() {
+    $("#leadGen").validate();
+ });
