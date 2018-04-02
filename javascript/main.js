@@ -12,3 +12,5 @@ let googleUser = require('./user'),
     profile = require('./profile'),
     form = require('./formInteractions'),
     $ = require('jquery');
+
+$(document).on('click', '.navbar-brand', function(){render.renderHomeMain();});
