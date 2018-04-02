@@ -2,7 +2,8 @@
 
 // VARIABLES
 let $ = require('jquery'),
-    response = require('./responseType');
+    response = require('./responseType'),
+    profile = require('./profile');
 
 // FUNCTIONS
 //this function re-renders the primary container upon submission
@@ -85,7 +86,7 @@ function loadLongForm(){
                 <div class="col-sm-6 mb-4">
                     <label for="counseling">Is your child currently receiving trauma counseling?</label>
                     <select class="form-control form-control-lg" id="counseling">
-                        <option id="default" value="no-answer">Please select an answer</option>
+                        <option id="default" value="">Please select an answer</option>
                         <option>Yes</option>
                         <option>No</option>
                     </select>
@@ -139,27 +140,33 @@ function loadLongForm(){
 function buildUserProfile(profileData, curEditProfile) {
         for(var item in profileData){
         let currentProfile = profileData[item];
+        let childAge = profile.calculateAge(currentProfile.childDOB);
         let profileDisplay =
-        `<h1>${currentProfile.childName}'s Profile</h1>
+        `<h1>${currentProfile.childName} ${currentProfile.lastName}'s Profile</h1>
         <div class="row">
-                <div id="profileGlance" class="col col-md-4 blueBG">
-                    <h3>At a Glance</h3>
-                    <p><strong>Child's Name:</strong> ${currentProfile.childName} ${currentProfile.lastName}</p>
-                    <p><strong>Parent Name(s)</strong> ${currentProfile.parentName1} ${currentProfile.lastName}<br />
-                    ${currentProfile.parentName2}</p>
-                    <p><strong>Birth Country:</strong> ${currentProfile.birthCountry}</p>
-                    <p><strong>Overview:</strong> ${currentProfile.eduInfo}</p>
-                    <button type="button" id="editProfile" data-edit-case="${curEditProfile}" class="btn btn-danger btn-lg"><a href="#">Edit</a></button>
-                    <button type="button" id="deleteProfile" class="btn btn-dark btn-lg"><a href="#">Delete</a></button>
-                    </div>
-                <div id="profileDeep" class="col col-md-8">
-                    <h2>More About ${currentProfile.childName}</h2>
-                    <p><strong>DOB:</strong> ${currentProfile.childDOB}</p>
-                    <p><strong>Description:</strong>&nbsp;${currentProfile.childDescription}</p>
-                    <p><strong>Diagnosed Special Needs:</strong>&nbsp;${currentProfile.diagnoses}</p>
-                    <p><strong>Current Trauma Counseling:</strong>&nbsp;${currentProfile.counseling}</p>
+            <div id="profileGlance" class="col col-md-4 blueBG mb-4">
+                <h3>At a Glance</h3>
+                <p><strong>Child's Name:</strong> ${currentProfile.childName} ${currentProfile.lastName}</p>
+                <p><strong>Parent Name(s)</strong> ${currentProfile.parentName1} ${currentProfile.lastName}<br />
+                ${currentProfile.parentName2}</p>
+                <p><strong>Overview:</strong> ${currentProfile.eduInfo}</p>
                 </div>
-        </div>`;
+            <div id="profileDeep" class="col col-md-8 mt-3 mb-4">
+                <h2>More About ${currentProfile.childName}</h2>
+                <p><strong>Birth Country:</strong> ${currentProfile.birthCountry}</p>
+                <p><strong>Age:</strong> ${childAge}</p>
+                <p><strong>Description:</strong>&nbsp;${currentProfile.childDescription}</p>
+                <p><strong>Diagnosed Special Needs:</strong>&nbsp;${currentProfile.diagnoses}</p>
+                <p><strong>Current Trauma Counseling:</strong>&nbsp;${currentProfile.counseling}</p>
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="col-md-4">
+                <button type="button" id="editProfile" data-edit-case="${curEditProfile}" class="btn btn-danger btn-lg btn-profile"><a href="#">Edit</a></button>
+                <button type="button" id="deleteProfile" class="btn btn-dark btn-lg btn-profile"><a href="#">Delete</a></button>
+            </div>
+        </div>
+    </div>`;
         $("#primaryContainer").html(profileDisplay);
         }
       }
@@ -240,6 +247,23 @@ function buildEditForm(profileData, curCaseID){
         childName: profileData ? profileData.childName : "",
         lastName: profileData ? profileData.lastName : "",
         childDOB: profileData ? profileData.childDOB : "",
+        parentName1: profileData ? profileData.parentName1 : "",
+        parentEmail: profileData ? profileData.parentEmail : "",
+        birthCountry: profileData ? profileData.birthCountry : "",
+        planType: profileData ? profileData.planType : "",
+        eduInfo: profileData ? profileData.eduInfo : "",
+        referralSource: profileData ? profileData.referralSource : "",
+        adoptionDate: profileData ? profileData.adoptionDate : "",
+        currentGrade: profileData ? profileData.currentGrade : "",
+        schoolName: profileData ? profileData.schoolName : "",
+        currentState: profileData ? profileData.currentState : "",
+        diagnoses: profileData ? profileData.diagnoses : "",
+        counseling: profileData ? profileData.counseling : "",
+        needsKnown: profileData ? profileData.needsKnown : "",
+        parentName2: profileData ? profileData.parentName2 : "",
+        parent2LastName: profileData ? profileData.parent2LastName : "",
+        phoneNumber: profileData ? profileData.phoneNumber : "",
+        callPreference: profileData ? profileData.callPreference : "",
         childDescription: profileData ? profileData.childDescription : "",
         formTitle: profileData ? `Edit ${profileData.childName}'s Profile` : "Add Child Profile",
         btnText: profileData ? "Update Profile" : "save",
