@@ -6,7 +6,7 @@ let $ = require('jquery'),
     googleUser = require('./user');
 
 
-function loadProfile() {
+function loadProfile(curUserCaseID) {
     let currentUser = googleUser.getUser();
     console.log("current user at beginning of loadProfile", currentUser);
     caseFile.getProfile(currentUser)
@@ -14,6 +14,20 @@ function loadProfile() {
       var curUserCaseID = caseFile.getCase();
       console.log("Here's the profile data ", profileData);
         render.buildUserProfile(profileData, curUserCaseID);
+    });
+  }
+
+  function loadDropProfile() {
+    let currentUser = googleUser.getUser();
+    console.log("current user at beginning of loadProfile", currentUser);
+    caseFile.getProfile(currentUser)
+    .then((profileData) =>{
+      let curEditProfile = Object.keys(profileData);
+      curEditProfile.forEach(function(item){
+        console.log("here's the key from dropdown click: ", curEditProfile);
+        console.log("Here's the profile data from dropdown click: ", profileData);
+        render.buildUserProfile(profileData, curEditProfile);
+      });
     });
   }
 
@@ -50,7 +64,7 @@ $(document).on("click", "#editProfile", function () {
 $(document).on('click', '#viewProfdropdown', function () {
   console.log('view profile clicked from dropdown');
   var user = googleUser.getUser();
-  loadProfile(user);
+  loadDropProfile(user);
 });
 
 

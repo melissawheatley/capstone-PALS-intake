@@ -208,7 +208,7 @@ function renderHomeMain(){
 
                     <div class="form-group">
                         <label for="parentEmail">Where do you want us to send your <em>Field Guide</em>?</label>
-                        <input type="email" class="form-control mb-4 required" id="parentEmail" placeholder="name@domain.com" required>
+                        <input type="email" class="form-control mb-4" id="parentEmail" placeholder="name@domain.com" required>
                     </div>
             
                     <div class="form-group">
@@ -220,7 +220,7 @@ function renderHomeMain(){
                             <div class="col-sm-6 mb-4">
                                 <label for="birthCountry">Birth&nbsp;Country</label>
                                 <!-- <select class="gds-cr gds-countryflag" country-data-region-id="gds-cr-three" ></select> -->
-                                <input type="text" id="birthCountry" class="form-control" placeholder="Country" required>
+                                <input type="text" id="birthCountry" class="form-control" placeholder="Country">
                             </div>
                         </div>
                     </div>
@@ -302,7 +302,7 @@ function buildEditForm(profileData, curCaseID){
                 <p><strong>Current Trauma Counseling:</strong>&nbsp;<input type="text" id="counseling" placeholder="" value="${caseEditObj.counseling}"></input></p>
                 <p><strong>Primary Phone:</strong>&nbsp;<input type="tel" id="phoneNumber" placeholder="999-999-9999" value="${caseEditObj.phoneNumber}"></input></p>
                 <p><strong>Call Preferences:</strong>&nbsp;<input type="text" id="callPreference" placeholder"please share time of day preferences" value ="${caseEditObj.callPreference}"></input></p>            </div>
-                <button id="${curCaseID}" class="${caseEditObj.btnType} btn btn-danger btn-lg"">${caseEditObj.btnText}</button>
+                <button data-case-info="${curCaseID}" class="${caseEditObj.btnType} btn btn-danger btn-lg"">${caseEditObj.btnText}</button>
             </div><!--col-->
         </div><!--end row-->`;
     resolve(form);

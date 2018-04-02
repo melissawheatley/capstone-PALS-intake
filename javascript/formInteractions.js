@@ -32,7 +32,7 @@ $(document).on("click", "#loadLongForm", render.loadLongForm);
 //event listener to build userObj2
 $(document).on("click", "#submitLongForm", function(event){
     event.preventDefault();
-    console.log('user clicked submit on secondary long form');
+    // console.log('user clicked submit on secondary long form');
     let curUserCaseID = caseFile.getCase();
     let caseObj2 = objects.buildSecondaryCase();
     caseFile.addCaseInfo(curUserCaseID, caseObj2)
@@ -45,12 +45,14 @@ $(document).on("click", "#submitLongForm", function(event){
 // listens for a click on the update profile button and puts info in firebase
 $(document).on('click', '.save_edit_btn', function(event){
   event.preventDefault();
-  console.log('clicked to update profile');
-  let curUserCaseID = caseFile.getCase();
+  console.log('clicked to save updated profile');
+  var curUserCaseID = $(this).data("case-info");
+  console.log("curCaseID from button click", curUserCaseID);
+//   let curUserCaseID = caseFile.getCase();
     let caseEditObj = objects.buildFullCase();
     caseFile.editProfile(caseEditObj, curUserCaseID)
     .then(()=>{
+        profile.loadProfile(curUserCaseID);
         console.log("sucessfully updated case via edit form");
-        profile.loadProfile();
     });
 });
