@@ -140,7 +140,15 @@ function buildUserProfile(profileData, curEditProfile) {
         for(var item in profileData){
         let currentProfile = profileData[item];
         let profileDisplay =
-        `<h1>${currentProfile.childName} ${currentProfile.lastName}'s Profile</h1>
+        `<div class="row">
+            <div class="col col-auto pl-0">
+                <h1>${currentProfile.childName} ${currentProfile.lastName}'s Profile</h1>
+            </div>
+            <div class="col col-md-4 mt-2">
+                <button type="button" id="editProfile" data-edit-case="${curEditProfile}" class="btn btn-danger btn-lg btn-profile"><a href="#">Edit</a></button>
+                <button type="button" id="deleteProfile" data-edit-case="${curEditProfile}" class="btn btn-dark btn-lg btn-profile"><a href="#">Delete</a></button>
+            </div>
+        </div>
         <div class="row">
             <div id="profileGlance" class="col col-md-4 blueBG mb-4">
                 <h3>At a Glance</h3>
@@ -152,7 +160,7 @@ function buildUserProfile(profileData, curEditProfile) {
                 <p><strong>Overview:</strong> ${currentProfile.eduInfo}</p>
                 </div>
             <div id="profileDeep" class="col col-md-8 mt-3 mb-4">
-                <h2>More About ${currentProfile.childName}</h2>
+                <h2 class="mb-2">More About ${currentProfile.childName}</h2>
                 <p><strong>Birth Country:</strong> ${currentProfile.birthCountry}</p>
                 <p><strong>DOB:</strong> ${currentProfile.childDOB}</p>
                 <p><strong>Adoption Date</strong> ${currentProfile.adoptionDate}</p>
@@ -161,17 +169,11 @@ function buildUserProfile(profileData, curEditProfile) {
                 <p><strong>Diagnosed Special Needs:</strong>&nbsp;${currentProfile.diagnoses}</p>
                 <p><strong>Current Trauma Counseling:</strong>&nbsp;${currentProfile.counseling}</p>
                 <hr />
-                <h2>${currentProfile.lastName} Family Information</h2>
+                <h2 class="mb-2">${currentProfile.lastName} Family Information</h2>
                 <p><strong>Email:</strong> ${currentProfile.parentEmail}</p>
                 <p><strong>Primary Phone:</strong> ${currentProfile.phoneNumber}</p>
                 <p><strong>Call Preferences:</strong>&nbsp;${currentProfile.callPreference}</p>
                 <p><strong>Special Needs Known at Time of Adoption/Placement:</strong>&nbsp;${currentProfile.needsKnown}</p>
-            </div>
-        </div>
-        <div class="row justify-content-start">
-            <div class="col-md-4">
-                <button type="button" id="editProfile" data-edit-case="${curEditProfile}" class="btn btn-danger btn-lg btn-profile"><a href="#">Edit</a></button>
-                <button type="button" id="deleteProfile" data-edit-case="${curEditProfile}" class="btn btn-dark btn-lg btn-profile"><a href="#">Delete</a></button>
             </div>
         </div>
     </div>`;
@@ -196,18 +198,18 @@ function renderHomeMain(){
                     <div class="form-group">
                         <div class="form-row">
                             <div class="col-sm-6 mb-4">
-                                <label for="firstName-parent1">First Name</label>
+                                <label for="firstName-parent1">First Name*</label>
                                 <input type="text" id="firstName-parent1" class="form-control" placeholder="Parent/Guardian first name" required>
                             </div>
                             <div class="col-sm-6 mb-4">
-                                <label for="lastName">Last Name</label>
+                                <label for="lastName">Last Name*</label>
                                 <input type="text" class="form-control" placeholder="Last name" id="lastName" required>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="parentEmail">Where do you want us to send your <em>Field Guide</em>?</label>
+                        <label for="parentEmail">Where do you want us to send your <em>Field Guide</em>?*</label>
                         <input type="email" class="form-control mb-4" id="parentEmail" placeholder="name@domain.com" required>
                     </div>
             
