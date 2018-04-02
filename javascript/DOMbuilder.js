@@ -135,35 +135,37 @@ function loadLongForm(){
 </div>`);
 }
 
-// function calculateAge(childDOB) { 
-//     var ageDifMs = Date.now() - childDOB.getTime();
-//     var ageDate = new Date(ageDifMs); // miliseconds from epoch
-//     return Math.abs(ageDate.getUTCFullYear() - 1970);
-//   }
-
 // This function renders the entire node back to the DOM for read functionality and to prepare for update functionality.
 function buildUserProfile(profileData, curEditProfile) {
         for(var item in profileData){
         let currentProfile = profileData[item];
-        // let birthday = profileData.childDOB;
-        // let childAge = calculateAge(birthday);
         let profileDisplay =
         `<h1>${currentProfile.childName} ${currentProfile.lastName}'s Profile</h1>
         <div class="row">
             <div id="profileGlance" class="col col-md-4 blueBG mb-4">
                 <h3>At a Glance</h3>
                 <p><strong>Child's Name:</strong> ${currentProfile.childName} ${currentProfile.lastName}</p>
-                <p><strong>Parent Name(s)</strong> ${currentProfile.parentName1} ${currentProfile.lastName}<br />
+                <p><strong>Parent Name(s)</strong> ${currentProfile.parentName1} <br />
                 ${currentProfile.parentName2}</p>
+                <p><strong>State:</strong> ${currentProfile.currentState}</p>
+                <p><strong>School:</strong> ${currentProfile.schoolName} (Grade ${currentProfile.currentGrade})</p>
                 <p><strong>Overview:</strong> ${currentProfile.eduInfo}</p>
                 </div>
             <div id="profileDeep" class="col col-md-8 mt-3 mb-4">
                 <h2>More About ${currentProfile.childName}</h2>
                 <p><strong>Birth Country:</strong> ${currentProfile.birthCountry}</p>
                 <p><strong>DOB:</strong> ${currentProfile.childDOB}</p>
+                <p><strong>Adoption Date</strong> ${currentProfile.adoptionDate}</p>
                 <p><strong>Description:</strong>&nbsp;${currentProfile.childDescription}</p>
+                <p><strong>Plan Type:</strong>&nbsp;${currentProfile.planType}</p>
                 <p><strong>Diagnosed Special Needs:</strong>&nbsp;${currentProfile.diagnoses}</p>
                 <p><strong>Current Trauma Counseling:</strong>&nbsp;${currentProfile.counseling}</p>
+                <hr />
+                <h2>${currentProfile.lastName} Family Information</h2>
+                <p><strong>Email:</strong> ${currentProfile.parentEmail}</p>
+                <p><strong>Primary Phone:</strong> ${currentProfile.phoneNumber}</p>
+                <p><strong>Call Preferences:</strong>&nbsp;${currentProfile.callPreference}</p>
+                <p><strong>Special Needs Known at Time of Adoption/Placement:</strong>&nbsp;${currentProfile.needsKnown}</p>
             </div>
         </div>
         <div class="row justify-content-start">
