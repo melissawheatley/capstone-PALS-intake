@@ -69,7 +69,10 @@ function sendToFirebase(userObj){
 	addUser(userObj);
 }
 
-//EVENT LISTENERS
+////////////////////////////////////////
+///         EVENT LISTENERS        ////
+///////////////////////////////////////
+
 //LOGIN
 $("#login").click(function(){
     // console.log("user clicked login");
@@ -85,6 +88,15 @@ $("#login").click(function(){
         return currentUser;
     });
     console.log("UID result from login: ", currentUser.user.uid);
+});
+
+//LOGOUT
+$(document).on("click", "#logout", function(){
+	googleLogOut()
+	.then(()=>{
+	$("#login").removeClass("d-none");
+	$("#userPic").addClass("d-none");
+	});
 });
 
 
