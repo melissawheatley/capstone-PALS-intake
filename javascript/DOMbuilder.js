@@ -2,8 +2,7 @@
 
 // VARIABLES
 let $ = require('jquery'),
-    response = require('./responseType'),
-    profile = require('./profile');
+    response = require('./responseType');
 
 // FUNCTIONS
 //this function re-renders the primary container upon submission
@@ -140,7 +139,7 @@ function loadLongForm(){
 function buildUserProfile(profileData, curEditProfile) {
         for(var item in profileData){
         let currentProfile = profileData[item];
-        let childAge = profile.calculateAge(currentProfile.childDOB);
+        console.log("current profile: ", currentProfile);
         let profileDisplay =
         `<h1>${currentProfile.childName} ${currentProfile.lastName}'s Profile</h1>
         <div class="row">
@@ -154,7 +153,7 @@ function buildUserProfile(profileData, curEditProfile) {
             <div id="profileDeep" class="col col-md-8 mt-3 mb-4">
                 <h2>More About ${currentProfile.childName}</h2>
                 <p><strong>Birth Country:</strong> ${currentProfile.birthCountry}</p>
-                <p><strong>Age:</strong> ${childAge}</p>
+                <p><strong>DOB:</strong> ${currentProfile.childDOB}</p>
                 <p><strong>Description:</strong>&nbsp;${currentProfile.childDescription}</p>
                 <p><strong>Diagnosed Special Needs:</strong>&nbsp;${currentProfile.diagnoses}</p>
                 <p><strong>Current Trauma Counseling:</strong>&nbsp;${currentProfile.counseling}</p>
