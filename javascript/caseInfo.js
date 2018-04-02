@@ -71,7 +71,7 @@ return $.ajax({
 function editProfile(caseEditObj, curUserCaseID) {
     return $.ajax({
       url: `${config.getFBsettings().databaseURL}/caseInfo/${curUserCaseID}.json`,
-      type: 'PATCH',
+      type: 'PUT',
       data: JSON.stringify(caseEditObj),
       dataType: "json"
   }).done((caseID) =>{

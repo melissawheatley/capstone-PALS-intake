@@ -8,7 +8,7 @@ function buildInitialCase() {
     let caseObj = {
     parentName1: $("#firstName-parent1").val(),
     lastName: $("#lastName").val(),
-    parentEmail: $("parentEmail").val(),
+    parentEmail: $("#parentEmail").val(),
     childName: $("#childName").val(),
     birthCountry: $("#birthCountry").val(),
     planType: $("#planType").val(),
@@ -43,7 +43,7 @@ function buildFullCase(){
     let caseEditObj = {
     parentName1: $("#firstName-parent1").val(),
     lastName: $("#lastName").val(),
-    parentEmail: $("parentEmail").val(),
+    parentEmail: $("#parentEmail").val(),
     childName: $("#childName").val(),
     birthCountry: $("#birthCountry").val(),
     planType: $("#planType").val(),
