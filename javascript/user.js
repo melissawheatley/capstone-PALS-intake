@@ -5,8 +5,9 @@ var firebase = require("firebase/app");
     require("firebase/auth");
 	require("firebase/database");
 
-let config = require("./config"),
-	currentUser = null,
+let config = require('./config'),
+    render = require('./DOMbuilder'),
+    currentUser = null,
 	$ = require('jquery');
 
 var provider = new firebase.auth.GoogleAuthProvider();
@@ -96,8 +97,9 @@ $("#login").click(function(){
 $(document).on("click", "#logout", function(){
 	googleLogOut()
 	.then(()=>{
+    render.renderHomeMain();
 	$("#login").removeClass("d-none");
-	$("#userPic").addClass("d-none");
+    $("#userPic").addClass("d-none");
 	});
 });
 
