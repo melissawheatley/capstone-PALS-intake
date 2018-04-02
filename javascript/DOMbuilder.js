@@ -182,18 +182,18 @@ function renderHomeMain(){
                         <div class="form-row">
                             <div class="col-sm-6 mb-4">
                                 <label for="firstName-parent1">First Name</label>
-                                <input type="text" id="firstName-parent1" class="form-control" placeholder="Parent/Guardian first name">
+                                <input type="text" id="firstName-parent1" class="form-control" placeholder="Parent/Guardian first name" required>
                             </div>
                             <div class="col-sm-6 mb-4">
                                 <label for="lastName">Last Name</label>
-                                <input type="text" class="form-control" placeholder="Last name" id="lastName">
+                                <input type="text" class="form-control" placeholder="Last name" id="lastName" required>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="parentEmail">Where do you want us to send your <em>Field Guide</em>?</label>
-                        <input type="email" class="form-control mb-4" id="parentEmail" placeholder="name@domain.com">
+                        <input type="email" class="form-control mb-4 required" id="parentEmail" placeholder="name@domain.com">
                     </div>
             
                     <div class="form-group">
@@ -205,7 +205,7 @@ function renderHomeMain(){
                             <div class="col-sm-6 mb-4">
                                 <label for="birthCountry">Birth&nbsp;Country</label>
                                 <!-- <select class="gds-cr gds-countryflag" country-data-region-id="gds-cr-three" ></select> -->
-                                <input type="text" id="birthCountry" class="form-control" placeholder="Country">
+                                <input type="text" id="birthCountry" class="form-control" placeholder="Country" required>
                             </div>
                         </div>
                     </div>
@@ -226,7 +226,7 @@ function renderHomeMain(){
                         <input type="text" class="form-control mb-4" id="referralSource" placeholder="ex. Conference, Friend, etc.">
                     <div>
                 
-                <button type="button" id="submitLeadGen" class="btn btn-danger btn-lg"><a href="#">Submit</a></button>
+                <button type="submit" id="submitLeadGen" class="btn btn-danger btn-lg"><a href="#">Submit</a></button>
                 </form>
             </div>
         </div> 
