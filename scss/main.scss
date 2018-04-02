@@ -160,6 +160,11 @@ label{
     line-height: 1.6rem;
 }
 
+.btn-profile{
+    display: inline-block;
+    width: 45%;
+}
+
 //Bootstrap adjustments//
 .btn-outline-danger{
     color: $palsRed;
@@ -169,7 +174,7 @@ label{
 .btn-danger{
     background-color: $palsRed;
     padding: .5rem 2rem;
-    margin-top: .5rem;
+    // margin-top: .5rem;
 }
 
 .btn-lg{
