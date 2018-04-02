@@ -84,10 +84,10 @@ $("#login").click(function(){
         $("#login").addClass("d-none");
         $("#userPic").removeClass("d-none").html(`${result.user.displayName}  <img src="${result.user.photoURL}" alt="${result.user.displayName} photo from Google" class="profPic rounded-circle">`);
         sendToFirebase(buildUserObj(result.user.uid, result.user.email, result.user.displayName));
-        // console.log("login complete!");
+		// console.log("login complete!");
+		console.log("UID result from login: ", currentUser.user.uid);
         return currentUser;
     });
-    console.log("UID result from login: ", currentUser.user.uid);
 });
 
 //LOGOUT
