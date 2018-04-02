@@ -31,7 +31,7 @@ $(document).on("click", "#loadLongForm", render.loadLongForm);
 
 //event listener to build userObj2
 $(document).on("click", "#submitLongForm", function(event){
-    event.preventDefault();
+    // event.preventDefault();
     // console.log('user clicked submit on secondary long form');
     let curUserCaseID = caseFile.getCase();
     let caseObj2 = objects.buildSecondaryCase();

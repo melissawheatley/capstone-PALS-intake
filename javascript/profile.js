@@ -6,6 +6,7 @@ let $ = require('jquery'),
     googleUser = require('./user');
 
 function loadProfile(curUserCaseID) {
+    $('#legal').addClass("d-none");
     let currentUser = googleUser.getUser();
     console.log("current user at beginning of loadProfile", currentUser);
     caseFile.getProfile(currentUser)
@@ -17,6 +18,7 @@ function loadProfile(curUserCaseID) {
   }
 
   function loadDropProfile() {
+    $('#legal').addClass("d-none");
     let currentUser = googleUser.getUser();
     console.log("current user at beginning of loadProfile", currentUser);
     caseFile.getProfile(currentUser)
