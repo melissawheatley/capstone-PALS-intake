@@ -193,7 +193,7 @@ function renderHomeMain(){
 
                     <div class="form-group">
                         <label for="parentEmail">Where do you want us to send your <em>Field Guide</em>?</label>
-                        <input type="email" class="form-control mb-4 required" id="parentEmail" placeholder="name@domain.com">
+                        <input type="email" class="form-control mb-4 required" id="parentEmail" placeholder="name@domain.com" required>
                     </div>
             
                     <div class="form-group">
