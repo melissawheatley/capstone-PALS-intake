@@ -2,8 +2,7 @@
 
 // VARIABLES
 let $ = require('jquery'),
-    response = require('./responseType'),
-    profile = require('./profile');
+    response = require('./responseType');
 
 // FUNCTIONS
 //this function re-renders the primary container upon submission
@@ -136,11 +135,18 @@ function loadLongForm(){
 </div>`);
 }
 
+// function calculateAge(childDOB) { 
+//     var ageDifMs = Date.now() - childDOB.getTime();
+//     var ageDate = new Date(ageDifMs); // miliseconds from epoch
+//     return Math.abs(ageDate.getUTCFullYear() - 1970);
+//   }
+
 // This function renders the entire node back to the DOM for read functionality and to prepare for update functionality.
 function buildUserProfile(profileData, curEditProfile) {
         for(var item in profileData){
         let currentProfile = profileData[item];
-        let childAge = profile.calculateAge(currentProfile.childDOB);
+        // let birthday = profileData.childDOB;
+        // let childAge = calculateAge(birthday);
         let profileDisplay =
         `<h1>${currentProfile.childName} ${currentProfile.lastName}'s Profile</h1>
         <div class="row">
@@ -154,7 +160,7 @@ function buildUserProfile(profileData, curEditProfile) {
             <div id="profileDeep" class="col col-md-8 mt-3 mb-4">
                 <h2>More About ${currentProfile.childName}</h2>
                 <p><strong>Birth Country:</strong> ${currentProfile.birthCountry}</p>
-                <p><strong>Age:</strong> ${childAge}</p>
+                <p><strong>DOB:</strong> ${currentProfile.childDOB}</p>
                 <p><strong>Description:</strong>&nbsp;${currentProfile.childDescription}</p>
                 <p><strong>Diagnosed Special Needs:</strong>&nbsp;${currentProfile.diagnoses}</p>
                 <p><strong>Current Trauma Counseling:</strong>&nbsp;${currentProfile.counseling}</p>
@@ -168,8 +174,8 @@ function buildUserProfile(profileData, curEditProfile) {
         </div>
     </div>`;
         $("#primaryContainer").html(profileDisplay);
-        }
       }
+    }
 
 function renderHomeMain(){
     $('main').html(`<div id="primaryContainer" class="container">
