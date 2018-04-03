@@ -4,6 +4,7 @@ let $ = require('jquery'),
     render = require('./DOMbuilder'),
     caseFile = require('./caseInfo'),
     responseType = require('./responseType'),
+    adminView = require('./adminView'),
     googleUser = require('./user');
 
 function loadProfile(curUserCaseID) {
@@ -76,15 +77,6 @@ $(document).on('click', '#viewProfdropdown', function () {
 $(document).on('click', '#editCancel', function () {
   var user = googleUser.getUser();
   loadDropProfile(user);
-});
-
-$(document).on('click', '#viewALLdropdown', function(){
-  console.log('clicked view all');
-  caseFile.getALLprofiles()
-  .then((profileData)=>{
-    console.log('profileData from all: ', profileData);
-    render.adminViewAll(profileData);
-  });
 });
 
 
