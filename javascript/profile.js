@@ -3,6 +3,7 @@
 let $ = require('jquery'), 
     render = require('./DOMbuilder'),
     caseFile = require('./caseInfo'),
+    responseType = require('./responseType'),
     googleUser = require('./user');
 
 function loadProfile(curUserCaseID) {
@@ -60,6 +61,7 @@ $(document).on("click", "#editProfile", function () {
     return render.buildEditForm(profileData, curCaseID);
   }).then((finishedForm) =>{
     // console.log('edit form coming...');
+    responseType.populatePlanTypes();
     $("#primaryContainer").html(finishedForm);
   });
 });
