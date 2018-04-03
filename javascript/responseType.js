@@ -90,4 +90,4 @@ function getPlanTypes(){
     });
 }
 
-module.exports = {getPlanTypes, fillTypeSwitch};
+module.exports = {getPlanTypes, fillTypeSwitch, populatePlanTypes};
