@@ -1,8 +1,8 @@
 "use strict";
 
 // REQUIRES
-let $ = require('jquery'),
-    user = require('./user');
+let user = require('./user'),
+    $ = require('jquery');
 
 function buildInitialCase() {
     let caseObj = {

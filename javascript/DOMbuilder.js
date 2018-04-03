@@ -2,7 +2,6 @@
 
 // VARIABLES
 let $ = require('jquery'),
-    caseFile = require('./caseInfo'),
     response = require('./responseType');
 
 // FUNCTIONS
@@ -331,9 +330,6 @@ function buildEditForm(profileData, curCaseID){
     resolve(form);
     });
   }
-
-  
-
 
 module.exports = {
   buildUserProfile,

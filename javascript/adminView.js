@@ -1,8 +1,8 @@
 "use strict";
 
 let caseFile = require('./caseInfo'),
-    $ = require('jquery'),
-    render = require('./DOMbuilder');
+    render = require('./DOMbuilder'),
+    $ = require('jquery');
 
 
 function adminViewAll(profileData){
@@ -33,5 +33,14 @@ $(document).on('click', '.cardBtn', function(){
         render.buildUserProfile(profileData, curCaseID);
     });
 });
+
+$(document).on('click', '#viewALLdropdown', function(){
+    console.log('clicked view all');
+    caseFile.getALLprofiles()
+    .then((profileData)=>{
+      console.log('profileData from all: ', profileData);
+      adminViewAll(profileData);
+    });
+  });
 
 module.exports = {adminViewAll};

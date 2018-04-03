@@ -29,7 +29,6 @@ function getUser(){
     return currentUser;
 }
 
-
 firebase.auth().onAuthStateChanged(function(user){
     console.log("onAuthStateChanged", user);
     if (user.uid == "2vZLU95BIbfyDkpUO5ohP1tM9jS2"){
