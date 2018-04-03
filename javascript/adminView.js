@@ -1,6 +1,8 @@
 "use strict";
 
 let caseFile = require('./caseInfo'),
+    $ = require('jquery'),
+    render = require('./DOMbuilder');
 
 
 function adminViewAll(profileData){
@@ -28,7 +30,7 @@ $(document).on('click', '.cardBtn', function(){
     var curCaseID = $(this).data("edit-case"); 
     caseFile.getCaseByID(curCaseID)
     .then((profileData)=>{
-        buildUserProfile(profileData, curCaseID);
+        render.buildUserProfile(profileData, curCaseID);
     });
 });
 
