@@ -229,8 +229,15 @@ a{
 }
 
 .dropdown-item{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background-color: $lightGrey
+}
 
+.dropdown-menu{
+    width: 100%;
+    text-align: center;
 }
 
 
