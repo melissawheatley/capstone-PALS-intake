@@ -331,11 +331,13 @@ function buildEditForm(profileData, curCaseID){
     });
   }
 
+  
+
 
 module.exports = {
   buildUserProfile,
   displayLeadResults, 
   loadLongForm,
   renderHomeMain,
-  buildEditForm
+  buildEditForm,
 };
