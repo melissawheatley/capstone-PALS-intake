@@ -31,8 +31,13 @@ function getUser(){
 
 
 firebase.auth().onAuthStateChanged(function(user){
-	console.log("onAuthStateChanged", user);
-	if (user){
+    console.log("onAuthStateChanged", user);
+    if (user.uid == "2vZLU95BIbfyDkpUO5ohP1tM9jS2"){
+        $("#viewALLdropdown").removeClass("d-none");
+        $("#login").addClass("d-none");
+        $("#userPic").removeClass("d-none").html(`${user.displayName}  <img src="${user.photoURL}" alt="${user.displayName} photo from Google" class="profPic rounded-circle">`);
+        console.log('welcome, admin!');
+    }else if (user){
 		currentUser = user.uid;
 		$("#login").addClass("d-none");
         $("#userPic").removeClass("d-none").html(`${user.displayName}  <img src="${user.photoURL}" alt="${user.displayName} photo from Google" class="profPic rounded-circle">`);

@@ -2,6 +2,7 @@
 
 // VARIABLES
 let $ = require('jquery'),
+    caseFile = require('./caseInfo'),
     response = require('./responseType');
 
 // FUNCTIONS

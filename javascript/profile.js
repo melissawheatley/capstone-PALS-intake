@@ -78,5 +78,14 @@ $(document).on('click', '#editCancel', function () {
   loadDropProfile(user);
 });
 
+$(document).on('click', '#viewALLdropdown', function(){
+  console.log('clicked view all');
+  caseFile.getALLprofiles()
+  .then((profileData)=>{
+    console.log('profileData from all: ', profileData);
+    render.adminViewAll(profileData);
+  });
+});
+
 
 module.exports = {loadProfile};
