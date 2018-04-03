@@ -10,21 +10,21 @@ function displayLeadResults(){
     let leadResults = `<div class="row">
         <div id="responseText" class="col-md-6">    
             <h1>Thank you for getting in touch with PALS!</h1>
-            <h2>Your download is ready</h2>
-            <p>Sit in window and stare oooh, a bird, yum destroy the blinds, and hit you unexpectedly for put toy mouse in food bowl run out of litter box at full speed , but chase ball of string yet destroy couch as revenge. </p>
+            <h2>Your <em>Field Guide</em> download is ready.</h2>
+            <p>I wish I had known more about special eucation BEFORE we adopted! There were challenges I didn't know to expect. If your child is facing challenges in school, there is hope! This book explores answers to questions I wish I'd know to ask — not just before we adopted, but once we'd returned home, and the year after.  </p>
             <a href="https://gbod-assets.s3.amazonaws.com/legacy/kintera-files/worship/Worship_2018-RevisedCommonLectionary-SundaysSpecial-YearB.pdf"><button type="button" id="bookDownload" class="btn btn-lg btn-danger mb-4">Download</button></a>
-            <blockquote>Sniff all the things intently stare at the same spot, yet spend all night ensuring people don't sleep sleep all day for annoy owner until he gives you food say meow repeatedly until belly rubs, feels good under the bed.</blockquote>
+            <blockquote>There is no magic formula for supporting academic growth for children adopted internationally, but there are multiple options for learning support and strategies.</blockquote>
             <div id="dynamicResponse"></div>
             </div><!--/col-->
         <div id="nextSteps" class="container col-md-6 steelBG">
             <div class="row" style="padding: 1rem 3rem;">
-            <h3 class="mt-4 pt-4;" style="color: #a8d0db;">Next Steps</h3>
-            <p>Lie in the sink all day give me some of your food give me some of your food give me some of your food meh, i don't want it, for howl uncontrollably for no reason. Nap all day who's the baby poop in litter box, scratch the walls for with tail in the air ears back wide eyed.</p>
+            <h3 class="mt-4 pt-4;" style="color: #a8d0db;">Next Steps — Build Your Case</h3>
+            <p>Post Adoption Learning Services (PALS) provides direct services, training, education advocacy, and other activities for children and families. If you're ready to schedule a consultation with us, please complete your profile so we can begin evaluating your case.</p>
             <button type="button" id="loadLongForm" class="btn btn-lg btn-danger"><a href="#">Get Started</a></button>
             </div>
             <div class="row" id="testimonial">
                 <div class="col-12 blueBG">
-                <p>A testimonial quote will go here.</p>
+                <p>Anna is a wealth of information and a true pleasure to work with. Her assistance made a huge difference in how we advocated for our child. We highly recommend her services! -April Crice</p>
                 </div><!--end nested col-12-->
             </div><!--/nested row-->
         </div><!--/col-->
@@ -189,8 +189,8 @@ function renderHomeMain(){
                 <h2>Get Free Resources and Recommendations</h2>
                 <p>The Post Adoption Learning Services (PALS) team understands each child's situation is colored by his/her individual stories of both trauma and triumph. As PALS works on behalf of both children adopted internationally as a group and works to come alongside individuals to provide direct advocacy services, our research has shown that XYZ. In our FREE eBook download, you can begin learning about the patterns and systems that affect your child's future.</p>
                 <p>This book explores many topics, including writing text about topic one, writing more text and more information about topic two, and adding something splashy and fun with topic 3 or later </p>
-                <blockquote>It shouldn't be hard to come up with a quote with just a prolific and gifted writer steering the ship. </blockquote>
-                <p>Lie in the sink all day give me some of your food give me some of your food give me some of your food meh, i don't want it, for howl uncontrollably for no reason. Nap all day who's the baby poop in litter box, scratch the walls for with tail in the air ears back wide eyed.</p>
+                <blockquote>Knowing the options helps you customize your child's learning path so that her ability to learn and her felt safety are upheld in a way that gives her voice.</blockquote>
+                <p>This guide includes stories from three mothers, each describing her child's learning journey. Developing an education plan for your child takes time. Adoption is a journey, and it doesn't stop when parents walk through the airport into the welcome home signs and hugs of tearful friends. Of course you'll make mistakes. All parents do. It's part of finding your own voice and giving voice to your child. </p>
             </div>
             <div id="mainForm" class="col-md-6 blueBG">
                 <h3>Get Your free copy of <em>A Field Guide to Learning</em></h3>
