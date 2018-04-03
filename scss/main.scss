@@ -103,6 +103,10 @@ label{
     color: $darkBlue;
 }
 
+a{
+    color: $darkBlue;
+}
+
 
 
 // ID styling
@@ -114,6 +118,10 @@ label{
     height: 50px;
     width: 50px;
     align-self: center;
+}
+
+#mainText{
+    padding-left: 0;
 }
 
 #nextSteps{
@@ -143,6 +151,11 @@ label{
     width: 100%;
 }
 
+#profileEditDeep {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
 #profileEditDeep input{
     width: 100%;
 }
@@ -167,6 +180,12 @@ label{
 .blueBG{
     background-color: $lightBlue;
     padding: 1rem;
+}
+
+.dotsBG {
+    background-image: url('../imgs/pals_grey-dots.svg');
+    background-position: center bottom;
+    background-repeat: no-repeat;
 }
 
 .disclaimer{
@@ -207,6 +226,11 @@ label{
 
 .form-control{
     font-size: inherit;
+}
+
+.dropdown-item{
+    font-size: 1.3rem;
+
 }
 
 
