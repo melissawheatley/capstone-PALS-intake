@@ -93,7 +93,7 @@ function loadLongForm(){
                 <div class="col-sm-6 mb-4">
                     <label for="needsKnown">Were you aware of your child's special needs at placement?</label>
                     <select class="form-control form-control-lg" id="needsKnown">
-                        <option id="default" value="no-answer">Please select an answer</option>
+                        <option id="default" value="">Please select an answer</option>
                         <option>Yes</option>
                         <option>Yes, but not fully</option>
                         <option>No</option>
@@ -305,8 +305,17 @@ function buildEditForm(profileData, curCaseID){
                 <p><strong>Plan Type:</strong> <select class="form-control form-control-lg mb-4" id="planType" value="${caseEditObj.planType}">
                 </select></p>
                 <p><strong>Diagnosed Special Needs:</strong>&nbsp;<input type="text" id="diagnoses" placeholder="Formal Diagnoses" value="${caseEditObj.diagnoses}"></p>
-                <p><strong>Special Needs Known at Time of Adoption/Placement:</strong>&nbsp;<input type="text" id="needsKnown" placeholder="" value="${caseEditObj.needsKnown}"></p>
-                <p><strong>Current Trauma Counseling:</strong>&nbsp;<input type="text" id="counseling" placeholder="" value="${caseEditObj.counseling}"></p>
+                <p><strong>Special Needs Known at Time of Adoption/Placement:</strong>&nbsp;<select class="form-control form-control-lg" id="needsKnown">
+                <option id="default" value="${caseEditObj.needsKnown}">${caseEditObj.needsKnown}</option>
+                <option>Yes</option>
+                <option>Yes, but not fully</option>
+                <option>No</option>
+            </select></p>
+                <p><strong>Currently In Trauma Counseling:</strong>&nbsp;<select class="form-control form-control-lg" id="counseling">
+                <option id="default" value="${caseEditObj.counseling}">${caseEditObj.counseling}</option>
+                <option>Yes</option>
+                <option>No</option>
+            </select></p>
                 <h2 class="mt-3 mb-2">${caseEditObj.lastName} Family Information</h2>
                 <p><strong>Email:</strong>&nbsp;<input type="email" id="parentEmail" placeholder="email@domain.com" value="${caseEditObj.parentEmail}"></p>
                 <p><strong>Primary Phone:</strong>&nbsp;<input type="tel" id="phoneNumber" placeholder="999-999-9999" value="${caseEditObj.phoneNumber}"></p>
