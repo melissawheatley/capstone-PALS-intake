@@ -37,6 +37,8 @@ $(document).on("click", "#deleteProfile", function () {
     // console.log("delete button was clicked");
     let curEditProfile = $(this).data("edit-case");
     console.log("delete button was clicked with profile", curEditProfile);
+    var deletePrompt = window.confirm(`Are you sure? Press ok to delete your profile.`);
+    if(deletePrompt == true ){
     caseFile.deleteProfile(curEditProfile)
     .then(() =>{
       render.renderHomeMain();
@@ -45,7 +47,7 @@ $(document).on("click", "#deleteProfile", function () {
     }).then(()=>{
       $('#deleteSuccess').delay( 2100 ).fadeOut( 400 );
     });
-  });
+  }});
 
 // get the profiledata, then populate the form for editing.
 $(document).on("click", "#editProfile", function () {

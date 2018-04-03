@@ -150,7 +150,7 @@ function buildUserProfile(profileData, curEditProfile) {
             </div>
         </div>
         <div class="row">
-            <div id="profileGlance" class="col col-md-4 blueBG mb-4">
+            <div id="profileGlance" class="col col-md-4 blueBG pb-4">
                 <h3>At a Glance</h3>
                 <p><strong>Child's Name:</strong> ${currentProfile.childName} ${currentProfile.lastName}</p>
                 <p><strong>Parent Name(s)</strong> ${currentProfile.parentName1} <br />
@@ -159,7 +159,7 @@ function buildUserProfile(profileData, curEditProfile) {
                 <p><strong>School:</strong> ${currentProfile.schoolName} (Grade ${currentProfile.currentGrade})</p>
                 <p><strong>Overview:</strong> ${currentProfile.eduInfo}</p>
                 </div>
-            <div id="profileDeep" class="col col-md-8 mt-3 mb-4">
+            <div id="profileDeep" class="col col-md-8 mt-3 pb-4">
                 <h2 class="mb-2">More About ${currentProfile.childName}</h2>
                 <p><strong>Birth Country:</strong> ${currentProfile.birthCountry}</p>
                 <p><strong>DOB:</strong> ${currentProfile.childDOB}</p>
@@ -169,8 +169,8 @@ function buildUserProfile(profileData, curEditProfile) {
                 <p><strong>Diagnosed Special Needs:</strong>&nbsp;${currentProfile.diagnoses}</p>
                 <p><strong>Special Needs Known at Time of Adoption/Placement:</strong>&nbsp;${currentProfile.needsKnown}</p>
                 <p><strong>Current Trauma Counseling:</strong>&nbsp;${currentProfile.counseling}</p>
-                <hr />
-                <h2 class="mb-2">${currentProfile.lastName} Family Information</h2>
+                
+                <h2 class="mt-2 mb-2">${currentProfile.lastName} Family Information</h2>
                 <p><strong>Email:</strong> ${currentProfile.parentEmail}</p>
                 <p><strong>Primary Phone:</strong> ${currentProfile.phoneNumber}</p>
                 <p><strong>Call Preferences:</strong>&nbsp;${currentProfile.callPreference}</p>
@@ -194,6 +194,7 @@ function renderHomeMain(){
             </div>
             <div id="mainForm" class="col-md-6 blueBG">
                 <h3>Get Your free copy of <em>A Field Guide to Learning</em></h3>
+                <p class="ml-auto"><em>*required</em></p>
                 <form id="leadGen">
                     <div class="form-group">
                         <div class="form-row">
@@ -288,28 +289,28 @@ function buildEditForm(profileData, curCaseID){
         <div class="row">
             <div id="profileEditBasic" class="col col-md-4 blueBG mb-4">
                 <h3>At a Glance</h3>
-                <p><strong>Child's Name:</strong><br /><input class="mb-2" type="text" id="childName" placeholder="Child's First Name" value="${caseEditObj.childName}"></input><br /><input type="text" id="lastName" placeholder="Last Name" value="${caseEditObj.lastName}"></input></p>
-                <p><strong>Parent Name(s):</strong><br /><input class="mb-2" type="text" id="parentName1" placeholder="Parent First Name" value="${caseEditObj.parentName1}"></input><br /><input type="text" id="parentName2" placeholder="Second Parent, First Name" value="${caseEditObj.parentName2}"></input></p>
-                <p><strong>State:</strong> <input type="text" id="currentState" placeholder="ex. TN" value="${caseEditObj.currentState}"></input></p>
-                <p><strong>School:</strong> <input type="text" id="schoolName" placeholder="Name of School" value="${caseEditObj.schoolName}"></input></p>
+                <p><strong>Child's Name:</strong><br /><input class="mb-2" type="text" id="childName" placeholder="Child's First Name" value="${caseEditObj.childName}"><br /><input type="text" id="lastName" placeholder="Last Name" value="${caseEditObj.lastName}"></p>
+                <p><strong>Parent Name(s):</strong><br /><input class="mb-2" type="text" id="parentName1" placeholder="Parent First Name" value="${caseEditObj.parentName1}"><br /><input type="text" id="parentName2" placeholder="Second Parent, First Name" value="${caseEditObj.parentName2}"></p>
+                <p><strong>State:</strong> <input type="text" id="currentState" placeholder="ex. TN" value="${caseEditObj.currentState}"></p>
+                <p><strong>School:</strong> <input type="text" id="schoolName" placeholder="Name of School" value="${caseEditObj.schoolName}"></p>
                 <p><strong>Overview:</strong><br />
                 <p><textarea class="form-control mb-4" id="eduInfo" rows="5" value="${caseEditObj.eduInfo}"></textarea></p>
             </div><!--end profileEditBasic col-->
-            <div id="profileEditDeep" class="col col-md-8 mt-3 mb-4">
-                <h2 class="mb-2">More About ${caseEditObj.childName}</h2>
-                <p><strong>Birth Country:</strong> <input type="text" id="birthCountry" placeholder="Child's birth country" value="${caseEditObj.birthCountry}"></input></p>
-                <p><strong>DOB:</strong> <input type="text" id="childDOB" placeholder="Child's birth date" value="${caseEditObj.childDOB}"></input></p>
-                <p><strong>Adoption Date:</strong> <input type="text" id="adoptionDate" placeholder="Child's adoption date" value="${caseEditObj.adoptionDate}"></input></p>
+            <div id="profileEditDeep" class="col col-md-8 mb-4 greyBG">
+                <h2 class="mt-1 mb-2">More About ${caseEditObj.childName}</h2>
+                <p><strong>Birth Country:</strong> <input type="text" id="birthCountry" placeholder="Child's birth country" value="${caseEditObj.birthCountry}"></p>
+                <p><strong>DOB:</strong> <input type="text" id="childDOB" placeholder="Child's birth date" value="${caseEditObj.childDOB}"></p>
+                <p><strong>Adoption Date:</strong> <input type="text" id="adoptionDate" placeholder="Child's adoption date" value="${caseEditObj.adoptionDate}"></p>
                 <p><strong>Child Description:</strong> <textarea class="form-control mb-4" rows="3" type="text" id="childDescription" placeholder="Please add a few sentences describing your child." value="${caseEditObj.childDescription}"></textarea></p>
-                <p><strong>Plan Type:</strong> <input type="text" id="planType" placeholder="IEP/504/other" value="${caseEditObj.planType}"></input></p>
-                <p><strong>Diagnosed Special Needs:</strong>&nbsp;<input type="text" id="diagnoses" placeholder="Formal Diagnoses" value="${caseEditObj.diagnoses}"></input></p>
-                <p><strong>Special Needs Known at Time of Adoption/Placement:</strong>&nbsp;<input type="text" id="needsKnown" placeholder="" value="${caseEditObj.needsKnown}"></input></p>
-                <p><strong>Current Trauma Counseling:</strong>&nbsp;<input type="text" id="counseling" placeholder="" value="${caseEditObj.counseling}"></input></p>
-                <hr />
-                <h2 class="mb-2">${caseEditObj.lastName} Family Information</h2>
-                <p><strong>Email:</strong>&nbsp;<input type="email" id="parentEmail" placeholder="email@domain.com" value="${caseEditObj.parentEmail}"></input></p>
-                <p><strong>Primary Phone:</strong>&nbsp;<input type="tel" id="phoneNumber" placeholder="999-999-9999" value="${caseEditObj.phoneNumber}"></input></p>
-                <p><strong>Call Preferences:</strong>&nbsp;<input type="text" id="callPreference" placeholder"please share time of day preferences" value ="${caseEditObj.callPreference}"></input></p>
+                <p><strong>Plan Type:</strong> <select class="form-control form-control-lg mb-4" id="planType" value="${caseEditObj.planType}">
+                </select></p>
+                <p><strong>Diagnosed Special Needs:</strong>&nbsp;<input type="text" id="diagnoses" placeholder="Formal Diagnoses" value="${caseEditObj.diagnoses}"></p>
+                <p><strong>Special Needs Known at Time of Adoption/Placement:</strong>&nbsp;<input type="text" id="needsKnown" placeholder="" value="${caseEditObj.needsKnown}"></p>
+                <p><strong>Current Trauma Counseling:</strong>&nbsp;<input type="text" id="counseling" placeholder="" value="${caseEditObj.counseling}"></p>
+                <h2 class="mt-3 mb-2">${caseEditObj.lastName} Family Information</h2>
+                <p><strong>Email:</strong>&nbsp;<input type="email" id="parentEmail" placeholder="email@domain.com" value="${caseEditObj.parentEmail}"></p>
+                <p><strong>Primary Phone:</strong>&nbsp;<input type="tel" id="phoneNumber" placeholder="999-999-9999" value="${caseEditObj.phoneNumber}"></p>
+                <p><strong>Call Preferences:</strong>&nbsp;<input type="text" id="callPreference" placeholder"please share time of day preferences" value ="${caseEditObj.callPreference}"></p>
                 <div class="row">
                     <div class="col col-auto ml-auto">
                         <a id="editCancel" href="#">Cancel</a>&nbsp;&nbsp;<button data-case-info="${curCaseID}" class="${caseEditObj.btnType} btn btn-primary btn-lg ml-2 mt-4 mb-4">${caseEditObj.btnText}</button>
