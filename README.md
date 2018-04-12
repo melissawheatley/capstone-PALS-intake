@@ -10,7 +10,7 @@ I interviewed Anna, PALS Executive Director, to understand her needs and the nee
 
 Through the end-user survey, I discovered that families who would benefit for PALS' advocacy services may be hesitant to seeking help and will need more information before deciding to work with Anna. This led to refinement of my feature requirements and the creation of the lead generation form on top of the case management piece. Further testing showed that shifting even more data collection fields away from the first form created a better experience. 
 
-[Additional research methods and persona information are available in this presentation.]{https://docs.google.com/presentation/d/1p1m-na8QRiZQBMoi5Auc2FzR2mprOe6oW-gxSVBWK2w/edit?usp=sharing} 
+[Additional research methods and persona information are available in this presentation.](https://docs.google.com/presentation/d/1p1m-na8QRiZQBMoi5Auc2FzR2mprOe6oW-gxSVBWK2w/edit?usp=sharing)
 
 ## Key Features
 The PALS portal is a single-page CRUD application. It was coded to include the following features:
@@ -47,10 +47,10 @@ GRUNT
 *Grunt
 
 ## Additional Information
-*[Design Brief & Discovery Report]{https://docs.google.com/presentation/d/1p1m-na8QRiZQBMoi5Auc2FzR2mprOe6oW-gxSVBWK2w/edit?usp=sharing}
-*[Prototypes]{https://xd.adobe.com/view/1529efdd-8db0-411b-bec4-69c6beb78b73}
-*[Project Demo Slidedeck]{https://docs.google.com/presentation/d/1VFPBn0Vv-gKGU5CAiBLEPgxwwMFKjC_CofPUbd-EMUI/edit?usp=sharing}
-*[Connect with Me on LinkedIn]{http://linkedin.com/in/melissawheatley}
+*[Design Brief & Discovery Report](https://docs.google.com/presentation/d/1p1m-na8QRiZQBMoi5Auc2FzR2mprOe6oW-gxSVBWK2w/edit?usp=sharing)
+*[Adobe XD Prototypes](https://xd.adobe.com/view/1529efdd-8db0-411b-bec4-69c6beb78b73)
+*[Project Demo Slidedeck](https://docs.google.com/presentation/d/1VFPBn0Vv-gKGU5CAiBLEPgxwwMFKjC_CofPUbd-EMUI/edit?usp=sharing)
+*[Connect with Me on LinkedIn](http://linkedin.com/in/melissawheatley)
 
 
 ## Acknowledgments
