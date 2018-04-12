@@ -15,17 +15,17 @@ Through the end-user survey, I discovered that families who would benefit for PA
 ## Key Features
 The PALS portal is a single-page CRUD application. It was coded to include the following features:
 
-*Simple and intuitive interface for increasingly complex forms.
-*Lead generation form values are saved to Firebase.
-*Users will receive a customized response based on submitted lead gen for values.
-*Users may log in with Google authentication to save their personal case file.
-*Users may edit and delete their case files. 
-*The client has the "admin" ability to view all user profiles.
+* Simple and intuitive interface for increasingly complex forms.
+* Lead generation form values are saved to Firebase.
+* Users will receive a customized response based on submitted lead gen for values.
+* Users may log in with Google authentication to save their personal case file.
+* Users may edit and delete their case files. 
+* The client has the "admin" ability to view all user profiles.
 
 **Features that are currently or soon to be in development include:**
 
-*Creating functionality to allow login by username/password with test credentials for both user and admin view
-*Allowing individual users to view more than one child profile
+* Creating functionality to allow login by username/password with test credentials for both user and admin view
+* Allowing individual users to view more than one child profile
 
 *Additional Features have been considered, but were not within the original scope of this project. Additional features will be added to the public queue as additional development time can be allocated.* 
 
@@ -38,19 +38,19 @@ GRUNT
 `````
 
 ## Technologies Used
-*HTML5
-*CSS3/SASS
-*Javascript and jquery
-*Firebase
-*Bootstrap 4
-*Browserify
-*Grunt
+* HTML5
+* CSS3/SASS
+* Javascript and jquery
+* Firebase
+* Bootstrap 4
+* Browserify
+* Grunt
 
 ## Additional Information
-*[Design Brief & Discovery Report](https://docs.google.com/presentation/d/1p1m-na8QRiZQBMoi5Auc2FzR2mprOe6oW-gxSVBWK2w/edit?usp=sharing)
-*[Adobe XD Prototypes](https://xd.adobe.com/view/1529efdd-8db0-411b-bec4-69c6beb78b73)
-*[Project Demo Slidedeck](https://docs.google.com/presentation/d/1VFPBn0Vv-gKGU5CAiBLEPgxwwMFKjC_CofPUbd-EMUI/edit?usp=sharing)
-*[Connect with Me on LinkedIn](http://linkedin.com/in/melissawheatley)
+* [Design Brief & Discovery Report](https://docs.google.com/presentation/d/1p1m-na8QRiZQBMoi5Auc2FzR2mprOe6oW-gxSVBWK2w/edit?usp=sharing)
+* [Adobe XD Prototypes](https://xd.adobe.com/view/1529efdd-8db0-411b-bec4-69c6beb78b73)
+* [Project Demo Slidedeck](https://docs.google.com/presentation/d/1VFPBn0Vv-gKGU5CAiBLEPgxwwMFKjC_CofPUbd-EMUI/edit?usp=sharing)
+* [Connect with Me on LinkedIn](http://linkedin.com/in/melissawheatley)
 
 
 ## Acknowledgments
