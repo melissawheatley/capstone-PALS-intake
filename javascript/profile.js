@@ -69,7 +69,6 @@ $(document).on("click", "#editProfile", function () {
 
 // loads profile when clicking on profilepic dropdown
 $(document).on('click', '#viewProfdropdown', function () {
-  console.log('view profile clicked from dropdown');
   var user = googleUser.getUser();
   loadDropProfile(user);
 });

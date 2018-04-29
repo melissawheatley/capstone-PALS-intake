@@ -139,6 +139,7 @@ function loadLongForm(){
 function buildUserProfile(profileData, curEditProfile) {
         for(var item in profileData){
         let currentProfile = profileData[item];
+        console.log('currentProfile during build is: ', currentProfile);
         let profileDisplay =
         `<div class="row">
             <div class="col col-auto pl-0">
