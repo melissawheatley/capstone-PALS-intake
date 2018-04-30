@@ -135,10 +135,11 @@ function loadLongForm(){
 </div>`);
 }
 
-// This function renders the entire node back to the DOM for read functionality and to prepare for update functionality.
+// These functions render the entire profile node back to the DOM for read functionality and to prepare for update functionality.
 function buildUserProfile(profileData, curEditProfile) {
         for(var item in profileData){
         let currentProfile = profileData[item];
+        console.log('currentProfile during build is: ', currentProfile);
         let profileDisplay =
         `<div class="row">
             <div class="col col-auto pl-0">
@@ -180,6 +181,52 @@ function buildUserProfile(profileData, curEditProfile) {
         $("#primaryContainer").html(profileDisplay);
       }
     }
+
+    function buildUserForAdmin(profileData, curEditProfile) {
+        for( let i = 0; i < profileData.length; i++){
+        let currentProfile = profileData;
+        console.log('currentProfile during build is: ', currentProfile);
+        let profileDisplay =
+        `<div class="row">
+            <div class="col col-auto pl-0">
+                <h1>${currentProfile.childName} ${currentProfile.lastName}'s Profile</h1>
+            </div>
+            <div class="col col-md-4 mt-2">
+                <button type="button" id="editProfile" data-edit-case="${curEditProfile}" class="btn btn-outline-danger btn-lg btn-profile"><a href="#">Edit</a></button>
+                <button type="button" id="deleteProfile" data-edit-case="${curEditProfile}" class="btn btn-outline-dark btn-lg btn-profile"><a href="#">Delete</a></button>
+            </div>
+        </div>
+        <div class="row">
+            <div id="profileGlance" class="col col-md-4 blueBG pb-4">
+                <h3>At a Glance</h3>
+                <p><strong>Child's Name:</strong> ${currentProfile.childName} ${currentProfile.lastName}</p>
+                <p><strong>Parent Name(s)</strong> ${currentProfile.parentName1} <br />
+                ${currentProfile.parentName2}</p>
+                <p><strong>State:</strong> ${currentProfile.currentState}</p>
+                <p><strong>School:</strong> ${currentProfile.schoolName} (Grade ${currentProfile.currentGrade})</p>
+                <p><strong>Overview:</strong> ${currentProfile.eduInfo}</p>
+                </div>
+            <div id="profileDeep" class="col col-md-8 mt-3 pb-4">
+                <h2 class="mb-2">More About ${currentProfile.childName}</h2>
+                <p><strong>Birth Country:</strong> ${currentProfile.birthCountry}</p>
+                <p><strong>DOB:</strong> ${currentProfile.childDOB}</p>
+                <p><strong>Adoption Date</strong> ${currentProfile.adoptionDate}</p>
+                <p><strong>Description:</strong>&nbsp;${currentProfile.childDescription}</p>
+                <p><strong>Plan Type:</strong>&nbsp;${currentProfile.planType}</p>
+                <p><strong>Diagnosed Special Needs:</strong>&nbsp;${currentProfile.diagnoses}</p>
+                <p><strong>Special Needs Known at Time of Adoption/Placement:</strong>&nbsp;${currentProfile.needsKnown}</p>
+                <p><strong>Current Trauma Counseling:</strong>&nbsp;${currentProfile.counseling}</p>
+                
+                <h2 class="mt-2 mb-2">${currentProfile.lastName} Family Information</h2>
+                <p><strong>Email:</strong> ${currentProfile.parentEmail}</p>
+                <p><strong>Primary Phone:</strong> ${currentProfile.phoneNumber}</p>
+                <p><strong>Call Preferences:</strong>&nbsp;${currentProfile.callPreference}</p>
+            </div>
+        </div>
+    </div>`;
+        $("#primaryContainer").html(profileDisplay);
+      }
+    }    
 
 function renderHomeMain(){
     $('main').html(`<div id="primaryContainer" class="container">
@@ -337,4 +384,5 @@ module.exports = {
   loadLongForm,
   renderHomeMain,
   buildEditForm,
+  buildUserForAdmin
 };
