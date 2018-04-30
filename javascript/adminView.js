@@ -23,6 +23,7 @@ function adminViewAll(profileData){
     });
     profileCards += `</div>`;
     $('#primaryContainer').html(profileCards);
+    $('#legal').addClass('d-none');
 }
 
 function buildProfileForAdmin(profileData, caseID) {
