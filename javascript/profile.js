@@ -22,15 +22,19 @@ function loadProfile(curUserCaseID) {
   function loadDropProfile() {
     $('#legal').addClass("d-none");
     let currentUser = googleUser.getUser();
-    console.log("current user at beginning of loadProfile", currentUser);
+    console.log("current user at beginning of loadProfile dropdown", currentUser);
     caseFile.getProfile(currentUser)
     .then((profileData) =>{
-      let curEditProfile = Object.keys(profileData);
-      curEditProfile.forEach(function(item){
-        console.log("here's the key from dropdown click: ", curEditProfile);
-        console.log("Here's the profile data from dropdown click: ", profileData);
-        render.buildUserProfile(profileData, curEditProfile);
-      });
+      console.log('profileData', profileData);
+      if($.isEmptyObject(profileData)){
+        window.confirm(`You have not yet created a profile. Please share more information to get started with PALS.`);
+      }else{
+        let curEditProfile = Object.keys(profileData);
+        curEditProfile.forEach(function(item){
+          console.log("here's the key from dropdown click: ", curEditProfile);
+          console.log("Here's the profile data from dropdown click: ", profileData);
+          render.buildUserProfile(profileData, curEditProfile);
+        });}
     });
   }
 
