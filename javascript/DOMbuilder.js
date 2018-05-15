@@ -136,7 +136,7 @@ function loadLongForm(){
 }
 
 // These functions render the entire profile node back to the DOM for read functionality and to prepare for update functionality.
-function buildUserProfile(profileData) {
+function buildUserProfile(profileData, curEditProfile) {
         console.log("profileData xxxxxzz", profileData);
         for(var item in profileData){
         let currentProfile = profileData[item];
@@ -147,8 +147,8 @@ function buildUserProfile(profileData) {
                 <h1>${currentProfile.childName} ${currentProfile.lastName}'s Profile</h1>
             </div>
             <div class="col col-md-4 mt-2">
-                <button type="button" id="editProfile" data-edit-case="${profileData.key}" class="btn btn-outline-danger btn-lg btn-profile"><a href="#">Edit</a></button>
-                <button type="button" id="deleteProfile" data-edit-case="${profileData.key}" class="btn btn-outline-dark btn-lg btn-profile"><a href="#">Delete</a></button>
+                <button type="button" id="editProfile" data-edit-case="${curEditProfile}" class="btn btn-outline-danger btn-lg btn-profile"><a href="#">Edit</a></button>
+                <button type="button" id="deleteProfile" data-edit-case="${curEditProfile}" class="btn btn-outline-dark btn-lg btn-profile"><a href="#">Delete</a></button>
             </div>
         </div>
         <div class="row">

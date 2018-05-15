@@ -74,7 +74,7 @@ $(document).on("click", "#editProfile", function () {
 // loads profile when clicking on profilepic dropdown
 $(document).on('click', '#viewProfdropdown', function () {
   var user = googleUser.getUser();
-  loadProfile(user);
+  loadDropProfile(user);
 });
 
 $(document).on('click', '#viewAdminProf', function () {

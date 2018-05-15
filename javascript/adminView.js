@@ -15,7 +15,7 @@ function adminViewAll(profileData){
           <div class="card-body">
             <h2 class="card-title">${profileData[item].childName} ${profileData[item].lastName}</h2>
             <p class="card-text"><strong>Email:</strong> ${profileData[item].parentEmail}</p>
-            <p class="card-text">Overview:${profileData[item].eduInfo}</p>
+            <p class="card-text"><strong>Overview:</strong> ${profileData[item].eduInfo}</p>
             <a href="#" class="btn btn-danger btn-lg cardBtn" data-edit-case="${item}">View Profile</a>
           </div>
         </div>
