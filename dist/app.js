@@ -10379,7 +10379,7 @@ function displayLeadResults(){
             <h1>Thank you for getting in touch with PALS!</h1>
             <h2>Your <em>Field Guide</em> download is ready.</h2>
             <p>I wish I had known more about special eucation BEFORE we adopted! There were challenges I didn't know to expect. If your child is facing challenges in school, there is hope! This book explores answers to questions I wish I'd know to ask — not just before we adopted, but once we'd returned home, and the year after.  </p>
-            <a href="https://drive.google.com/open?id=1hrKofP5f3d6wmuPUK_MHn7-7JosRcKKp"><button type="button" id="bookDownload" class="btn btn-lg btn-danger mb-4">Download</button></a>
+            <a href="https://drive.google.com/open?id=1hrKofP5f3d6wmuPUK_MHn7-7JosRcKKp" target="_blank"><button type="button" id="bookDownload" class="btn btn-lg btn-danger mb-4">Download</button></a>
             <blockquote>There is no magic formula for supporting academic growth for children adopted internationally, but there are multiple options for learning support and strategies.</blockquote>
             <div id="dynamicResponse"></div>
             </div><!--/col-->
