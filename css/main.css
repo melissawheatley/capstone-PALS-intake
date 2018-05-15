@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css?family=EB+Garamond:400,600,800|Montserrat:400,600,800");
+html {
+  /* $rembase = 10px */
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  padding: 0;
+  color: #4c5b61;
+  padding: 0;
+  margin: 0;
+  position: relative; }
+
+nav {
+  border-bottom: 2px solid #ba1f31; }
+
+main {
+  position: relative; }
+
+h1 {
+  font-family: 'EB Garamond', Garamond, Georgia, 'Times New Roman', serif;
+  font-size: 4rem;
+  color: #4c5b61;
+  margin-bottom: 2rem; }
+
+h2 {
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2.2rem;
+  color: #ba1f31;
+  margin-bottom: 0rem; }
+
+h3 {
+  font-family: 'EB Garamond', Garamond, Georgia, 'Times New Roman', serif;
+  font-size: 2.4rem;
+  color: black;
+  font-weight: bolder !important; }
+
+h4 {
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #175676;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-weight: 800; }
+
+blockquote {
+  font-family: 'EB Garamond', Garamond, Georgia, 'Times New Roman', serif;
+  font-size: 2rem;
+  padding: 0 1.5rem;
+  margin: 3rem 5rem;
+  color: #175676;
+  font-style: italic;
+  border-left: 3px solid #dad6d6; }
+
+form {
+  padding: 1rem; }
+
+footer {
+  color: white;
+  margin-top: 2rem; }
+
+footer h4 {
+  color: white; }
+
+footer a {
+  color: white; }
+
+footer a:hover {
+  color: white; }
+
+label {
+  margin-bottom: 0;
+  color: #175676; }
+
+a {
+  color: #175676; }
+
+#primaryContainer {
+  margin-top: 2rem; }
+
+#userPic img {
+  height: 50px;
+  width: 50px;
+  align-self: center; }
+
+#mainText {
+  padding-left: 0; }
+
+#nextSteps {
+  color: white; }
+
+#testimonial {
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+
+#testimonial p {
+  padding: 5rem;
+  color: #4c5b61;
+  text-align: center; }
+
+#deleteSuccess {
+  position: absolute;
+  margin-top: -20px;
+  z-index: 999;
+  width: 100%; }
+
+#profileEditBasic input {
+  width: 100%; }
+
+#profileEditDeep {
+  padding-left: 2rem;
+  padding-right: 2rem; }
+
+#profileEditDeep input {
+  width: 100%; }
+
+.greyBG {
+  background-color: #dad6d6;
+  padding: 1rem; }
+
+.redBG {
+  background-color: #ba1f31;
+  padding: 1rem; }
+
+.steelBG {
+  background-color: #4c5b61; }
+
+.blueBG {
+  background-color: #a8d0db;
+  padding: 1rem; }
+
+.dotsBG {
+  background-image: url("../imgs/pals_grey-dots.svg");
+  background-position: center bottom;
+  background-repeat: no-repeat; }
+
+.disclaimer {
+  margin: 1.8rem 0;
+  font-size: 1.2rem;
+  line-height: 1.6rem; }
+
+.btn-profile {
+  display: inline-block;
+  width: 45%; }
+
+.btn-outline-danger {
+  color: #ba1f31;
+  border-color: #ba1f31; }
+
+.btn-danger {
+  background-color: #ba1f31;
+  padding: .5rem 2rem; }
+
+.btn-lg {
+  font-size: inherit; }
+
+.btn-primary {
+  background-color: #175676; }
+
+.btn a {
+  text-decoration: none;
+  color: inherit; }
+
+.form-control {
+  font-size: inherit; }
+
+.dropdown-item {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  background-color: #dad6d6; }
+
+.dropdown-menu {
+  width: 100%;
+  z-index: 1000;
+  text-align: center;
+  background-color: #dad6d6; }
+
+input:invalid {
+  border: 2px solid #ba1f31; }
+
+/*# sourceMappingURL=main.css.map */
