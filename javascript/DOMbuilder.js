@@ -140,7 +140,7 @@ function buildUserProfile(profileData, curEditProfile) {
         console.log("profileData xxxxxzz", profileData);
         for(var item in profileData){
         let currentProfile = profileData[item];
-        console.log('currentProfile during build is: ', currentProfile);
+        // console.log('currentProfile during build is: ', currentProfile);
         let profileDisplay =
         `<div class="row">
             <div class="col col-auto pl-0">
