@@ -49,13 +49,13 @@ firebase.auth().onAuthStateChanged(function(user){
         // $("#viewAdminProf").removeClass("d-none");
         $("#login").addClass("d-none");
         $('#emailLogin').addClass('d-none');
-        $("#userPic").removeClass("d-none").html(`Admin Profile`);
+        $("#userPic").removeClass("d-none").html(user.displayName ? user.displayName : `Admin Profile`);
         console.log('welcome, admin!');
     }else if (user){
 		currentUser = user.uid;
         $("#login").addClass("d-none");
         $('#emailLogin').addClass('d-none');
-        $("#userPic").removeClass("d-none").html(`User Profile`);
+        $("#userPic").removeClass("d-none").html(user.displayName ? user.displayName : `User Profile`);
 		console.log("This user is logged in:", currentUser);
 	}else{
 		currentUser = null;
