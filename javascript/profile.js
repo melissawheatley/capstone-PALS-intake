@@ -33,7 +33,7 @@ function loadProfile(curUserCaseID) {
         curEditProfile.forEach(function(item){
           console.log("here's the key from dropdown click: ", curEditProfile);
           console.log("Here's the profile data from dropdown click: ", profileData);
-          render.buildUserForAdmin(profileData, curEditProfile);
+          render.buildUserProfile(profileData, curEditProfile);
         });}
     });
   }
