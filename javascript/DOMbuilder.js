@@ -137,7 +137,6 @@ function loadLongForm(){
 
 // These functions render the entire profile node back to the DOM for read functionality and to prepare for update functionality.
 function buildUserProfile(profileData, curEditProfile) {
-        console.log("profileData xxxxxzz", profileData);
         for(var item in profileData){
         let currentProfile = profileData[item];
         // console.log('currentProfile during build is: ', currentProfile);
@@ -150,7 +149,7 @@ function buildUserProfile(profileData, curEditProfile) {
                 <button type="button" id="editProfile" data-edit-case="${curEditProfile}" class="btn btn-outline-danger btn-lg btn-profile"><a href="#">Edit</a></button>
                 <button type="button" id="deleteProfile" data-edit-case="${curEditProfile}" class="btn btn-outline-dark btn-lg btn-profile"><a href="#">Delete</a></button>
             </div>
-        </div>
+            </div>
         <div class="row">
             <div id="profileGlance" class="col col-md-4 blueBG pb-4">
                 <h3>At a Glance</h3>
@@ -160,7 +159,7 @@ function buildUserProfile(profileData, curEditProfile) {
                 <p><strong>State:</strong> ${currentProfile.currentState}</p>
                 <p><strong>School:</strong> ${currentProfile.schoolName} (Grade ${currentProfile.currentGrade})</p>
                 <p><strong>Overview:</strong> ${currentProfile.eduInfo}</p>
-                </div>
+            </div>
             <div id="profileDeep" class="col col-md-8 mt-3 pb-4">
                 <h2 class="mb-2">More About ${currentProfile.childName}</h2>
                 <p><strong>Birth Country:</strong> ${currentProfile.birthCountry}</p>
@@ -319,7 +318,7 @@ function buildEditForm(profileData, curCaseID){
         diagnoses: profileData ? profileData.diagnoses : "",
         counseling: profileData ? profileData.counseling : "",
         needsKnown: profileData ? profileData.needsKnown : "",
-        parentName2: profileData ? profileData.parentName2 : "",
+        parentName2: profileData ? profileData.parentName2 : " ",
         parent2LastName: profileData ? profileData.parent2LastName : "",
         phoneNumber: profileData ? profileData.phoneNumber : "",
         callPreference: profileData ? profileData.callPreference : "",
@@ -341,8 +340,9 @@ function buildEditForm(profileData, curCaseID){
                 <p><strong>Parent Name(s):</strong><br /><input class="mb-2" type="text" id="parentName1" placeholder="Parent First Name" value="${caseEditObj.parentName1}"><br /><input type="text" id="parentName2" placeholder="Second Parent, First Name" value="${caseEditObj.parentName2}"></p>
                 <p><strong>State:</strong> <input type="text" id="currentState" placeholder="ex. TN" value="${caseEditObj.currentState}"></p>
                 <p><strong>School:</strong> <input type="text" id="schoolName" placeholder="Name of School" value="${caseEditObj.schoolName}"></p>
+                <p><strong>Grade Level:</strong> <input type="text" id="currentGrade" placeholder="Grade Level" value="${caseEditObj.currentGrade}"></p>
                 <p><strong>Overview:</strong><br />
-                <p><textarea class="form-control mb-4" id="eduInfo" rows="5" value="${caseEditObj.eduInfo}"></textarea></p>
+                <p><textarea class="form-control mb-4" id="eduInfo" rows="5" placeholder="${caseEditObj.eduInfo}"></textarea></p>
             </div><!--end profileEditBasic col-->
             <div id="profileEditDeep" class="col col-md-8 mb-4 greyBG">
                 <h2 class="mt-1 mb-2">More About ${caseEditObj.childName}</h2>
@@ -350,7 +350,7 @@ function buildEditForm(profileData, curCaseID){
                 <p><strong>DOB:</strong> <input type="text" id="childDOB" placeholder="Child's birth date" value="${caseEditObj.childDOB}"></p>
                 <p><strong>Adoption Date:</strong> <input type="text" id="adoptionDate" placeholder="Child's adoption date" value="${caseEditObj.adoptionDate}"></p>
                 <p><strong>Child Description:</strong> <textarea class="form-control mb-4" rows="3" type="text" id="childDescription" placeholder="Please add a few sentences describing your child." value="${caseEditObj.childDescription}"></textarea></p>
-                <p><strong>Plan Type:</strong> <select class="form-control form-control-lg mb-4" id="planType" value="${caseEditObj.planType}">
+                <p><strong>Plan Type:</strong> <select class="form-control form-control-lg mb-4" id="planType"> 
                 </select></p>
                 <p><strong>Diagnosed Special Needs:</strong>&nbsp;<input type="text" id="diagnoses" placeholder="Formal Diagnoses" value="${caseEditObj.diagnoses}"></p>
                 <p><strong>Special Needs Known at Time of Adoption/Placement:</strong>&nbsp;<select class="form-control form-control-lg" id="needsKnown">
