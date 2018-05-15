@@ -10602,9 +10602,9 @@ function renderHomeMain(){
             <div id="mainText" class="col-md-6">
                 <h1>Educate. Advocate. Empower.</h1>
                 <h2>Get Free Resources and Recommendations</h2>
-                <p>The Post Adoption Learning Services (PALS) team understands each child's situation is colored by his/her individual stories of both trauma and triumph. As PALS works on behalf of both children adopted internationally as a group and works to come alongside individuals to provide direct advocacy services, our research has shown that XYZ. In our FREE eBook download, you can begin learning about the patterns and systems that affect your child's future.</p>
-                <p>This book explores many topics, including writing text about topic one, writing more text and more information about topic two, and adding something splashy and fun with topic 3 or later </p>
-                <blockquote>Knowing the options helps you customize your child's learning path so that her ability to learn and her felt safety are upheld in a way that gives her voice.</blockquote>
+                <p>The Post Adoption Learning Services (PALS) team understands each child's situation is colored by his/her individual stories of both trauma and triumph. PALS works on behalf of both children adopted internationally as a group and works to come alongside individuals to provide direct advocacy services. In our FREE eBook download, you can begin learning about the patterns and systems that affect your child's future.</p>
+                    <p>This book explores many topics, including parent perspectives, federal laws, and school resources. </p>
+                    <blockquote>Knowing the options helps you customize your child's learning path so that her ability to learn and her felt safety are upheld in a way that gives her voice.</blockquote>
                 <p>This guide includes stories from three mothers, each describing her child's learning journey. Developing an education plan for your child takes time. Adoption is a journey, and it doesn't stop when parents walk through the airport into the welcome home signs and hugs of tearful friends. Of course you'll make mistakes. All parents do. It's part of finding your own voice and giving voice to your child. </p>
             </div>
             <div id="mainForm" class="col-md-6 blueBG">
