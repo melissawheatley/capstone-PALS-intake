@@ -21,6 +21,18 @@ function googleLogOut(){
     return firebase.auth().signOut();
 }
 
+// function createUserByEmail(email, password){
+// firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+//     // Handle Errors here.
+//     var errorMessage = `There was an issue creating your account. Please try again.`;
+//     // ...
+//   });
+// }
+
+function signInWithEmailAndPassword(email, password){
+    return firebase.auth().signInWithEmailAndPassword(email, password);
+}
+
 function setUser(val){
 	currentUser = val;
 }
@@ -31,15 +43,19 @@ function getUser(){
 
 firebase.auth().onAuthStateChanged(function(user){
     console.log("onAuthStateChanged", user);
-    if (user.uid == "2vZLU95BIbfyDkpUO5ohP1tM9jS2"){
+    if (user.uid == "cAmsIcIg5LacqlJpc15ZyezrIEH2"){
+        $("#viewProfdropdown").addClass("d-none");
         $("#viewALLdropdown").removeClass("d-none");
+        // $("#viewAdminProf").removeClass("d-none");
         $("#login").addClass("d-none");
-        $("#userPic").removeClass("d-none").html(`${user.displayName}  <img src="${user.photoURL}" alt="${user.displayName} photo from Google" class="profPic rounded-circle">`);
+        $('#emailLogin').addClass('d-none');
+        $("#userPic").removeClass("d-none").html(`Admin Profile`);
         console.log('welcome, admin!');
     }else if (user){
 		currentUser = user.uid;
-		$("#login").addClass("d-none");
-        $("#userPic").removeClass("d-none").html(`${user.displayName}  <img src="${user.photoURL}" alt="${user.displayName} photo from Google" class="profPic rounded-circle">`);
+        $("#login").addClass("d-none");
+        $('#emailLogin').addClass('d-none');
+        $("#userPic").removeClass("d-none").html(`User Profile`);
 		console.log("This user is logged in:", currentUser);
 	}else{
 		currentUser = null;
@@ -89,11 +105,30 @@ $("#login").click(function(){
         let currentUser = result;
         // console.log("UID result from login: ", result.user.uid);
         setUser(result.user.uid);
-        $("#login").addClass("d-none");
-        $("#userPic").removeClass("d-none").html(`${result.user.displayName}  <img src="${result.user.photoURL}" alt="${result.user.displayName} photo from Google" class="profPic rounded-circle">`);
-        sendToFirebase(buildUserObj(result.user.uid, result.user.email, result.user.displayName));
+        // $("#login").addClass("d-none");
+        // $("#userPic").removeClass("d-none").html(`${result.user.displayName}  <img src="${result.user.photoURL}" alt="${result.user.displayName} photo from Google" class="profPic rounded-circle">`);
+        // sendToFirebase(buildUserObj(result.user.uid, result.user.email, result.user.displayName));
 		// console.log("login complete!");
 		console.log("UID result from login: ", currentUser.user.uid);
+        return currentUser;
+    });
+});
+
+$('#loginEmail').click(function(){
+    var email = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    console.log("modal sending info for auth:", email + password);
+    signInWithEmailAndPassword(email, password)
+    .then((result) => {
+        let currentUser = result;
+        console.log("UID result from login: ", result.uid);
+        setUser(result.uid);
+        // $("#login").addClass("d-none");
+        // $("#emailLogin").addClass("d-none");
+        // $("#userPic").removeClass("d-none").html(`${result.user.displayName}`);
+		// console.log("login with email complete!");
+        // console.log("UID result from login: ", currentUser.user.uid);
+        firebase.auth();
         return currentUser;
     });
 });
@@ -103,10 +138,11 @@ $(document).on("click", "#logout", function(){
 	googleLogOut()
 	.then(()=>{
     render.renderHomeMain();
-	$("#login").removeClass("d-none");
+    $("#login").removeClass("d-none");
+    $("#emailLogin").removeClass("d-none");
     $("#userPic").addClass("d-none");
 	});
 });
 
 
-module.exports = {googleLogIn, googleLogOut, setUser, getUser, addUser};
+module.exports = {googleLogIn, googleLogOut, signInWithEmailAndPassword, setUser, getUser, addUser};

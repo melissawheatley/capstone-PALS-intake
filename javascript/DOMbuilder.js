@@ -137,6 +137,7 @@ function loadLongForm(){
 
 // These functions render the entire profile node back to the DOM for read functionality and to prepare for update functionality.
 function buildUserProfile(profileData, curEditProfile) {
+        console.log("profileData xxxxxzz", profileData);
         for(var item in profileData){
         let currentProfile = profileData[item];
         console.log('currentProfile during build is: ', currentProfile);

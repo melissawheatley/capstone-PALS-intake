@@ -27,7 +27,7 @@ function loadProfile(curUserCaseID) {
     .then((profileData) =>{
       console.log('profileData', profileData);
       if($.isEmptyObject(profileData)){
-        window.confirm(`You have not yet created a profile. Please share more information to get started with PALS.`);
+        window.confirm(`You have not yet created a child profile. Please share more information to get started with PALS.`);
       }else{
         let curEditProfile = Object.keys(profileData);
         curEditProfile.forEach(function(item){
@@ -76,6 +76,12 @@ $(document).on('click', '#viewProfdropdown', function () {
   var user = googleUser.getUser();
   loadDropProfile(user);
 });
+
+$(document).on('click', '#viewAdminProf', function () {
+  var user = googleUser.getUser();
+  loadDropProfile(user);
+});
+
 
 $(document).on('click', '#editCancel', function () {
   var user = googleUser.getUser();
